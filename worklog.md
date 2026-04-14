@@ -111,3 +111,48 @@ Stage Summary:
 - Maintained all functionality while improving the user experience
 - Website now feels like a trusted, premium cleaning service rather than a technical dashboard
 - All changes compiled successfully with no linting errors
+
+---
+Task ID: 3
+Agent: Z.ai Code
+Task: Review and fix all website copy to sound like a professional cleaning company
+
+Work Log:
+- Fixed hero section copy (page.tsx)
+  - Changed "Certified Precision Cleaning" → "Professional Cleaning Services"
+  - Changed "Precision in Every Pour. Peace in Every Room." → "Expert Cleaning. Spotless Results Every Time."
+  - Replaced abstract "We don't clean. We curate..." with clear description: "Professional cleaning for homes and businesses. Our trained specialists deliver thorough, reliable service that transforms your space into a pristine environment you'll love coming home to."
+  - Changed CTA from "Claim Your Clarity" → "Book Your Cleaning"
+
+- Updated service names throughout (page.tsx & BookingConfigurator.tsx)
+  - "The Reset" → "Standard Cleaning" (clearer, more descriptive)
+  - "The Deep Tide" → "Deep Cleaning" (removed Tide brand reference)
+  - "The Transition" → "Move-In/Move-Out Cleaning" (more descriptive)
+  - Updated service descriptions to be more practical and less abstract
+  - Removed "surgical shine" and "baseline of calm" - replaced with clear cleaning language
+
+- Updated BookingConfigurator.tsx
+  - Changed service tier names to match updated naming
+  - Updated feature lists to reference new service names (e.g., "All Standard Services" instead of "All Reset Services")
+  - Updated descriptions to be clearer about what each service includes
+
+- Updated SpecialistSelector.tsx
+  - Changed "Lead Tidy Specialist" → "Senior Cleaning Specialist" (removed "tidy" which sounds like organizing)
+  - Changed "Deep Tide Specialist" → "Deep Cleaning Specialist" (removed Tide brand reference)
+  - Changed "Transition Specialist" → "Move-In/Move-Out Specialist" (more descriptive)
+  - Replaced abstract philosophy quotes with practical cleaning-focused statements:
+    - Ana: "Every home deserves to be clean and welcoming. I take pride in ensuring every surface is spotless and every room feels fresh for my clients."
+    - Marc: "Deep cleaning is about more than what you can see. I clean the hidden areas that most services miss — the vents, behind appliances, the grout lines. That's the difference."
+    - Elena: "Moving is stressful enough without worrying about the cleaning. I make sure your new home is move-in ready or your old one is spotless for the next owners."
+  - Updated one review to remove reference to "philosophical approach"
+  - Changed "Philosophy" section heading to "My Approach" (more practical)
+
+Stage Summary:
+- Successfully reviewed and updated all website copy to sound like a professional cleaning company
+- Removed abstract, pretentious language (e.g., "curate", "pour", "gallery installation", "presence of intention")
+- Replaced with clear, practical language that directly communicates cleaning services
+- Eliminated potential brand confusion (removed "Tide" references)
+- All service names now clearly communicate what they are
+- Specialist roles and quotes now focus on cleaning expertise and customer benefits
+- Maintained premium, professional tone while being clear and practical
+- All changes compiled successfully with no linting errors

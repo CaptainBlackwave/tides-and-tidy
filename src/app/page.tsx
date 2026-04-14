@@ -103,15 +103,15 @@ export default function Home() {
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <div className={`reveal transition-all duration-900 ease-out ${visibleElements.has('hero-1') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-1">
             <span className="inline-block text-[11px] font-bold tracking-[0.25em] uppercase text-teal-400 border border-teal-400/20 bg-teal-400/5 px-4 py-1.5 rounded-full" style={{ fontFamily: 'Archivo, sans-serif' }}>
-              Certified Precision Cleaning
+              Professional Cleaning Services
             </span>
           </div>
           <h1 className={`font-extrabold text-4xl sm:text-5xl md:text-7xl leading-[1.05] tracking-tight text-white mb-6 reveal transition-all duration-900 ease-out delay-100 ${visibleElements.has('hero-2') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-2" style={{ fontFamily: 'Archivo, sans-serif' }}>
-            Precision in Every Pour.<br />
-            <span className="text-gray-400">Peace in Every Room.</span>
+            Expert Cleaning.<br />
+            <span className="text-gray-400">Spotless Results Every Time.</span>
           </h1>
           <p className={`text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light reveal transition-all duration-900 ease-out delay-200 ${visibleElements.has('hero-3') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-3">
-            We don't clean. We curate. Every surface is assessed, every material respected, every space returned to a state of absolute clarity.
+            Professional cleaning for homes and businesses. Our trained specialists deliver thorough, reliable service that transforms your space into a pristine environment you'll love coming home to.
           </p>
           <div className={`reveal transition-all duration-900 ease-out delay-300 ${visibleElements.has('hero-4') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-4">
             <a href="#book" className="inline-block px-8 py-3.5 rounded-md text-sm uppercase tracking-wider font-bold transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,199,0.3)] hover:-translate-y-0.5" style={{
@@ -119,7 +119,7 @@ export default function Home() {
               color: '#0c1017',
               boxShadow: '0 0 20px rgba(0, 229, 199, 0.15), 0 0 60px rgba(0, 229, 199, 0.05)'
             }}>
-              Claim Your Clarity
+              Book Your Cleaning
             </a>
           </div>
         </div>
@@ -143,23 +143,23 @@ export default function Home() {
             {[
               {
                 id: 1,
-                title: 'The Reset',
+                title: 'Standard Cleaning',
                 image: 'https://picsum.photos/seed/foldedlinen/800/600',
-                description: 'Essential maintenance for the perpetually busy. Surfaces dusted, floors treated, spaces ordered. Your baseline of calm, restored weekly.',
+                description: 'Regular maintenance cleaning to keep your home fresh and tidy. Perfect for busy households who need consistent, reliable service.',
                 tags: ['Dusting', 'Vacuuming', 'Surface Care', 'Weekly']
               },
               {
                 id: 2,
-                title: 'The Deep Tide',
+                title: 'Deep Cleaning',
                 image: 'https://picsum.photos/seed/chromefaucet/800/600',
-                description: 'Intensive detailing for health and hygiene. Grout scrubbed, vents cleared, chrome polished to a surgical shine. Nothing escapes.',
+                description: 'Comprehensive cleaning that reaches every corner. Grout scrubbed, vents cleared, appliances detailed — a truly spotless home.',
                 tags: ['Grout Work', 'Appliance Detail', 'Sanitization', 'Monthly']
               },
               {
                 id: 3,
-                title: 'The Transition',
+                title: 'Move-In/Move-Out Cleaning',
                 image: 'https://picsum.photos/seed/closeddoor88/800/600',
-                description: 'Move-in or move-out perfection. Every corner documented, every surface immaculate. A space ready for its next chapter.',
+                description: 'Thorough cleaning for moving day. Every corner cleaned, every surface sanitized. Perfect for getting your security deposit back.',
                 tags: ['Full Detail', 'Documentation', 'Interior Windows', 'On Demand']
               }
             ].map((service, index) => (

@@ -16,7 +16,7 @@ interface ServiceTier {
 const serviceTiers: ServiceTier[] = [
   {
     id: 'reset',
-    name: 'The Reset',
+    name: 'Standard Cleaning',
     basePrice: 149,
     pricePerSqft: 0.20,
     description: 'Perfect for weekly maintenance and keeping your space fresh',
@@ -25,21 +25,21 @@ const serviceTiers: ServiceTier[] = [
   },
   {
     id: 'deep',
-    name: 'The Deep Tide',
+    name: 'Deep Cleaning',
     basePrice: 249,
     pricePerSqft: 0.35,
     description: 'Comprehensive deep clean for a truly spotless home',
     duration: 3.5,
-    features: ['All Reset Services', 'Inside Appliances', 'Grout & Tile Scrubbing', 'Baseboards & Vents']
+    features: ['All Standard Services', 'Inside Appliances', 'Grout & Tile Scrubbing', 'Baseboards & Vents']
   },
   {
     id: 'transition',
-    name: 'The Transition',
+    name: 'Move-In/Move-Out Cleaning',
     basePrice: 349,
     pricePerSqft: 0.45,
-    description: 'Move-in or move-out cleaning with full documentation',
+    description: 'Complete cleaning for moving day with full documentation',
     duration: 5,
-    features: ['All Deep Tide Services', 'Interior Windows', 'Cabinet Cleaning', 'Move Documentation']
+    features: ['All Deep Cleaning Services', 'Interior Windows', 'Cabinet Cleaning', 'Move Documentation']
   }
 ]
 

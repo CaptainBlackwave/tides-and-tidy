@@ -27,25 +27,25 @@ const specialists: Specialist[] = [
   {
     id: 1,
     name: 'Ana Voss',
-    role: 'Lead Tidy Specialist',
+    role: 'Senior Cleaning Specialist',
     experience: '8 Years',
     certifications: ['OSHA HazCom', 'ISSA CIMS', 'Marble Care'],
-    philosophy: 'Cleanliness is not the absence of mess — it\'s the presence of intention. I treat every room like a gallery installation.',
+    philosophy: 'Every home deserves to be clean and welcoming. I take pride in ensuring every surface is spotless and every room feels fresh for my clients.',
     image: 'https://picsum.photos/seed/specialistana/600/750',
     nextAvailable: 'Tomorrow, 9:00 AM',
     reviews: [
       { id: 1, client: 'Sarah M.', rating: 5, date: '2 weeks ago', text: 'Ana transformed my chaotic kitchen into a sanctuary. Her attention to detail is unmatched.' },
       { id: 2, client: 'Michael R.', rating: 5, date: '1 month ago', text: 'She treats every surface with such care. My home has never felt this organized.' },
-      { id: 3, client: 'Jennifer K.', rating: 5, date: '1 month ago', text: 'The philosophical approach to cleaning is real. Ana brings intention to every corner.' }
+      { id: 3, client: 'Jennifer K.', rating: 5, date: '1 month ago', text: 'Ana is thorough, efficient, and always leaves my home sparkling clean.' }
     ]
   },
   {
     id: 2,
     name: 'Marc Chen',
-    role: 'Deep Tide Specialist',
+    role: 'Deep Cleaning Specialist',
     experience: '6 Years',
     certifications: ['Chemical Safety', 'IAQA Certified', 'HVAC Detail'],
-    philosophy: 'People don\'t see the air they breathe. I do. A truly clean space is one where you feel lighter without knowing why.',
+    philosophy: 'Deep cleaning is about more than what you can see. I clean the hidden areas that most services miss — the vents, behind appliances, the grout lines. That\'s the difference.',
     image: 'https://picsum.photos/seed/specialistmarc/600/750',
     nextAvailable: 'Tomorrow, 2:00 PM',
     reviews: [
@@ -57,10 +57,10 @@ const specialists: Specialist[] = [
   {
     id: 3,
     name: 'Elena Durand',
-    role: 'Transition Specialist',
+    role: 'Move-In/Move-Out Specialist',
     experience: '11 Years',
     certifications: ['Move Compliance', 'Hardwood Certified', 'Lead-Safe EPA'],
-    philosophy: 'A transition is a threshold. The space you leave behind — or step into — should feel like a deep exhale. That\'s what I deliver.',
+    philosophy: 'Moving is stressful enough without worrying about the cleaning. I make sure your new home is move-in ready or your old one is spotless for the next owners.',
     image: 'https://picsum.photos/seed/specialistelena/600/750',
     nextAvailable: 'Friday, 10:00 AM',
     reviews: [
@@ -251,9 +251,10 @@ export default function SpecialistSelector() {
                 </div>
               </div>
 
-              {/* Philosophy */}
+              {/* About */}
               <div className="mb-6 pl-4 border-l-2 border-[#c4a868]">
-                <p className="text-gray-400 text-sm italic leading-relaxed">
+                <h3 className="text-sm text-gray-400 font-medium mb-2">My Approach</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
                   "{selectedSpecialist.philosophy}"
                 </p>
               </div>
