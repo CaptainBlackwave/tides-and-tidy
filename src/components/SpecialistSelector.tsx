@@ -104,17 +104,17 @@ export default function SpecialistSelector() {
       <section id="specialists" className="relative py-24 md:py-32 border-t border-slate-700/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Section Header */}
-          <div className="mb-16">
-            <div className="w-16 h-0.5 bg-gradient-to-r from-[#c4a868] to-transparent mb-5"></div>
-            <p className="text-[11px] font-heading font-600 tracking-[0.25em] uppercase text-[#c4a868] mb-3">
-              The Curators
+          <div className="mb-16 text-center">
+            <div className="w-16 h-1 bg-gradient-to-r from-[#c4a868] to-transparent mx-auto mb-5"></div>
+            <p className="text-sm font-semibold text-[#c4a868] mb-3 uppercase tracking-wider">
+              Meet Our Team
             </p>
-            <h2 className="font-heading font-800 text-3xl md:text-4xl tracking-tight text-white mb-4">
-              Certified Technicians of Calm
+            <h2 className="font-extrabold text-3xl md:text-4xl text-white mb-4" style={{ fontFamily: 'Archivo, sans-serif' }}>
+              Dedicated Cleaning Specialists
             </h2>
-            <p className="text-gray-400 text-base max-w-xl leading-relaxed font-light">
-              Not labor. Not staff. Specialists — each vetted, certified, and personally committed to the craft of immaculate spaces.
-              <span className="text-teal-400 font-medium"> Click any specialist to view their availability and reviews.</span>
+            <p className="text-gray-400 text-base max-w-2xl mx-auto leading-relaxed">
+              Every member of our team is carefully vetted, background-checked, and professionally trained.
+              <span className="text-teal-400 font-medium"> Click any specialist to learn more about their experience and read client reviews.</span>
             </p>
           </div>
 
@@ -134,35 +134,37 @@ export default function SpecialistSelector() {
                     alt={specialist.name}
                     className="w-full h-full object-cover grayscale contrast-[1.15] transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute bottom-4 right-4 bg-teal-400 text-slate-950 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    View Details
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute bottom-4 right-4 bg-teal-400 text-slate-950 px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                    Learn More
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
                 </div>
                 <div className="p-6">
-                  <div className="flex items-center justify-between mb-1">
-                    <h3 className="font-heading font-700 text-lg tracking-tight text-white group-hover:text-teal-400 transition-colors">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-bold text-lg text-white group-hover:text-teal-400 transition-colors" style={{ fontFamily: 'Archivo, sans-serif' }}>
                       {specialist.name}
                     </h3>
-                    <span className="text-[11px] text-gray-500 font-medium">{specialist.experience}</span>
+                    <span className="text-xs text-gray-400 font-medium bg-slate-800 px-2 py-1 rounded">
+                      {specialist.experience} Experience
+                    </span>
                   </div>
-                  <p className="text-[#c4a868] text-xs font-medium tracking-wider uppercase mb-4">
+                  <p className="text-[#c4a868] text-xs font-semibold uppercase tracking-wider mb-4">
                     {specialist.role}
                   </p>
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {specialist.certifications.slice(0, 3).map((cert) => (
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {specialist.certifications.slice(0, 2).map((cert) => (
                       <span
                         key={cert}
-                        className="bg-[rgba(196,168,104,0.08)] border border-[rgba(196,168,104,0.15)] text-[#c4a868] text-[11px] px-2 py-0.5 rounded"
+                        className="text-xs text-gray-400 bg-slate-800/50 px-2 py-1 rounded"
                       >
                         {cert}
                       </span>
                     ))}
                   </div>
-                  <p className="text-gray-500 text-xs leading-relaxed italic">
-                    {specialist.philosophy.slice(0, 80)}...
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    "{specialist.philosophy.slice(0, 90)}..."
                   </p>
                 </div>
               </div>
@@ -215,25 +217,27 @@ export default function SpecialistSelector() {
               <p className="text-gray-500 text-sm mb-6">{selectedSpecialist.experience}</p>
 
               {/* Next Available */}
-              <div className="bg-slate-900/50 border border-teal-400/20 rounded-lg p-4 mb-6">
+              <div className="bg-gradient-to-r from-teal-400/10 to-transparent border border-teal-400/20 rounded-lg p-4 mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-teal-400/10 rounded-full flex items-center justify-center">
-                    <Calendar className="w-5 h-5 text-teal-400" />
+                  <div className="w-12 h-12 bg-teal-400/20 rounded-full flex items-center justify-center">
+                    <Calendar className="w-6 h-6 text-teal-400" />
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-gray-500">
-                      Next Available Slot
+                    <p className="text-sm text-gray-400 font-medium">
+                      Next Available Appointment
                     </p>
-                    <p className="text-white font-mono text-sm">{selectedSpecialist.nextAvailable}</p>
+                    <p className="text-lg text-white font-semibold" style={{ fontFamily: 'Archivo, sans-serif' }}>
+                      {selectedSpecialist.nextAvailable}
+                    </p>
                   </div>
                 </div>
               </div>
 
               {/* Certifications */}
               <div className="mb-6">
-                <h3 className="text-[10px] uppercase tracking-widest text-gray-500 mb-3 flex items-center gap-2">
-                  <Award className="w-3 h-3" />
-                  Certifications
+                <h3 className="text-sm text-gray-400 font-medium mb-3 flex items-center gap-2">
+                  <Award className="w-4 h-4 text-[#c4a868]" />
+                  Certifications & Training
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {selectedSpecialist.certifications.map((cert) => (
@@ -256,8 +260,8 @@ export default function SpecialistSelector() {
 
               {/* Reviews */}
               <div>
-                <h3 className="text-[10px] uppercase tracking-widest text-gray-500 mb-4 flex items-center gap-2">
-                  <Star className="w-3 h-3 fill-[#c4a868] text-[#c4a868]" />
+                <h3 className="text-sm text-gray-400 font-medium mb-4 flex items-center gap-2">
+                  <Star className="w-4 h-4 fill-[#c4a868] text-[#c4a868]" />
                   Client Reviews ({selectedSpecialist.reviews.length})
                 </h3>
                 <div className="space-y-4">
@@ -300,14 +304,17 @@ export default function SpecialistSelector() {
                     document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' })
                   }, 300)
                 }}
-                className="w-full py-4 rounded uppercase text-xs tracking-widest font-bold transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,199,0.3)] hover:-translate-y-0.5"
+                className="w-full py-4 rounded-xl text-sm font-bold uppercase tracking-wide transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,199,0.3)] hover:-translate-y-0.5 flex items-center justify-center gap-2"
                 style={{
                   background: '#00e5c7',
                   color: '#0c1017',
                   boxShadow: '0 0 20px rgba(0, 229, 199, 0.15), 0 0 60px rgba(0, 229, 199, 0.05)'
                 }}
               >
-                Book {selectedSpecialist.name}
+                Book with {selectedSpecialist.name}
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </button>
             </div>
           </div>

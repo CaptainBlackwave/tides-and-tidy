@@ -132,11 +132,11 @@ export default function Home() {
       {/* Services Section */}
       <section id="services" className="relative py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="mb-16 reveal">
-            <div className="w-16 h-0.5 bg-gradient-to-r from-[#00e5c7] to-transparent mb-5"></div>
-            <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-teal-400 mb-3" style={{ fontFamily: 'Archivo, sans-serif' }}>Service Suites</p>
-            <h2 className="font-extrabold text-3xl md:text-4xl tracking-tight text-white mb-4" style={{ fontFamily: 'Archivo, sans-serif' }}>Organized by State of Mind</h2>
-            <p className="text-gray-400 text-base max-w-xl leading-relaxed font-light">Three tiers of restoration, each designed to return your environment to a specific caliber of calm.</p>
+          <div className="mb-16 text-center reveal">
+            <div className="w-16 h-1 bg-gradient-to-r from-[#00e5c7] to-transparent mx-auto mb-5"></div>
+            <p className="text-sm font-semibold text-teal-400 mb-3 uppercase tracking-wider" style={{ fontFamily: 'Archivo, sans-serif' }}>Our Services</p>
+            <h2 className="font-extrabold text-3xl md:text-4xl text-white mb-4" style={{ fontFamily: 'Archivo, sans-serif' }}>Cleaning Packages for Every Need</h2>
+            <p className="text-gray-400 text-base max-w-2xl mx-auto leading-relaxed">Whether you need regular maintenance, a deep clean, or help with a move, we have the perfect solution for your home.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -192,11 +192,11 @@ export default function Home() {
       {/* Transformations Section */}
       <section id="transformations" className="relative py-24 md:py-32 border-t border-slate-700/30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="mb-16 reveal">
-            <div className="w-16 h-0.5 bg-gradient-to-r from-[#00e5c7] to-transparent mb-5"></div>
-            <p className="text-[11px] font-bold tracking-[0.25em] uppercase text-teal-400 mb-3" style={{ fontFamily: 'Archivo, sans-serif' }}>Client Chronicles</p>
-            <h2 className="font-extrabold text-3xl md:text-4xl tracking-tight text-white mb-4" style={{ fontFamily: 'Archivo, sans-serif' }}>The Transformation</h2>
-            <p className="text-gray-400 text-base max-w-xl leading-relaxed font-light">Drag the divider. See what precision looks like — and feel the relief our clients describe.</p>
+          <div className="mb-16 text-center reveal">
+            <div className="w-16 h-1 bg-gradient-to-r from-[#00e5c7] to-transparent mx-auto mb-5"></div>
+            <p className="text-sm font-semibold text-teal-400 mb-3 uppercase tracking-wider" style={{ fontFamily: 'Archivo, sans-serif' }}>Before & After</p>
+            <h2 className="font-extrabold text-3xl md:text-4xl text-white mb-4" style={{ fontFamily: 'Archivo, sans-serif' }}>See the Difference We Make</h2>
+            <p className="text-gray-400 text-base max-w-2xl mx-auto leading-relaxed">Drag the slider to compare before and after. Real results from real homes like yours.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -204,7 +204,7 @@ export default function Home() {
               beforeImage="https://picsum.photos/seed/messykitchen99/900/560"
               afterImage="https://picsum.photos/seed/cleankitchen99/900/560"
               clientName="Sarah M."
-              serviceTier="The Deep Tide Client"
+              serviceTier="Deep Clean Service"
               quote="I didn't realize how much the state of my kitchen was weighing on me until Tides & Tidy restored it. I got back 10 hours a week — and my sanity."
               delay="0.1s"
             />
@@ -212,8 +212,8 @@ export default function Home() {
               beforeImage="https://picsum.photos/seed/dirtybathroom77/900/560"
               afterImage="https://picsum.photos/seed/cleanbathroom77/900/560"
               clientName="James & Priya K."
-              serviceTier="The Transition Clients"
-              quote="We moved into our new home and it didn't feel like ours until The Transition team finished. Every surface gleamed. It was like walking into a five-star suite."
+              serviceTier="Move-In Service"
+              quote="We moved into our new home and it didn't feel like ours until the team finished. Every surface gleamed. It was like walking into a brand new home."
               delay="0.2s"
             />
           </div>

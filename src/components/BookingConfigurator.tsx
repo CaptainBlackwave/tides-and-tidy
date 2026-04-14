@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { Calendar, Clock, CheckCircle, Sparkles } from 'lucide-react'
 
 interface ServiceTier {
   id: 'reset' | 'deep' | 'transition'
@@ -9,6 +10,7 @@ interface ServiceTier {
   pricePerSqft: number
   description: string
   duration: number
+  features: string[]
 }
 
 const serviceTiers: ServiceTier[] = [
@@ -17,24 +19,27 @@ const serviceTiers: ServiceTier[] = [
     name: 'The Reset',
     basePrice: 149,
     pricePerSqft: 0.20,
-    description: 'Essential maintenance for the perpetually busy',
-    duration: 2.5
+    description: 'Perfect for weekly maintenance and keeping your space fresh',
+    duration: 2.5,
+    features: ['Dusting & Surfaces', 'Vacuuming & Mopping', 'Bathroom Cleaning', 'Kitchen Wipe-down']
   },
   {
     id: 'deep',
     name: 'The Deep Tide',
     basePrice: 249,
     pricePerSqft: 0.35,
-    description: 'Intensive detailing for health and hygiene',
-    duration: 3.5
+    description: 'Comprehensive deep clean for a truly spotless home',
+    duration: 3.5,
+    features: ['All Reset Services', 'Inside Appliances', 'Grout & Tile Scrubbing', 'Baseboards & Vents']
   },
   {
     id: 'transition',
     name: 'The Transition',
     basePrice: 349,
     pricePerSqft: 0.45,
-    description: 'Move-in or move-out perfection',
-    duration: 5
+    description: 'Move-in or move-out cleaning with full documentation',
+    duration: 5,
+    features: ['All Deep Tide Services', 'Interior Windows', 'Cabinet Cleaning', 'Move Documentation']
   }
 ]
 
@@ -64,14 +69,14 @@ export default function BookingConfigurator() {
           estimatedPrice
         })
       })
-      
+
       if (response.ok) {
-        alert('Booking request received! We will contact you within 2 hours.')
+        alert('Thank you! We\'ve received your request and will contact you within 2 hours to confirm your appointment.')
       } else {
-        alert('Something went wrong. Please try again.')
+        alert('Something went wrong. Please try again or give us a call.')
       }
     } catch (error) {
-      alert('Something went wrong. Please try again.')
+      alert('Something went wrong. Please try again or give us a call.')
     } finally {
       setIsSubmitting(false)
     }
@@ -81,118 +86,167 @@ export default function BookingConfigurator() {
 
   return (
     <section id="book" className="relative py-28 md:py-36 border-t border-slate-700/30">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,229,199,0.06)_0%,transparent_70%)]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-950/10 to-transparent"></div>
       <div className="relative z-10 max-w-4xl mx-auto px-6">
-        <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800 rounded-2xl p-8 md:p-12 shadow-2xl">
-          <div className="flex flex-col md:flex-row gap-12">
-            
-            {/* Left Side - Configuration */}
-            <div className="flex-1">
-              <p className="text-[11px] font-heading font-600 tracking-[0.25em] uppercase text-teal-400 mb-6">
-                Booking Configurator
-              </p>
-              <h2 className="font-heading font-800 text-3xl text-white mb-8">
-                Estimate Your Transformation
-              </h2>
-              
-              <div className="space-y-8">
-                {/* Service Tier Selection */}
-                <div>
-                  <label className="text-[10px] uppercase tracking-widest text-gray-500 block mb-4">
-                    Select Tier
-                  </label>
-                  <div className="grid grid-cols-3 gap-3">
-                    {serviceTiers.map((tier) => (
-                      <button
-                        key={tier.id}
-                        onClick={() => setSelectedTier(tier.id)}
-                        className={`
-                          border py-3 rounded text-xs font-bold uppercase transition-all duration-300
-                          ${selectedTier === tier.id
-                            ? 'border-teal-400 bg-teal-400/10 text-teal-400 shadow-[0_0_20px_rgba(0,229,199,0.15)]'
-                            : 'border-slate-700 hover:border-gray-500 text-gray-400 hover:text-gray-300'
-                          }
-                        `}
-                      >
-                        {tier.id === 'reset' ? 'The Reset' : tier.id === 'deep' ? 'Deep Tide' : 'Transition'}
-                      </button>
-                    ))}
-                  </div>
-                  <p className="text-gray-500 text-xs mt-3 leading-relaxed">
-                    {currentTier.description}
-                  </p>
-                </div>
+        <div className="text-center mb-12">
+          <Sparkles className="w-12 h-12 text-teal-400 mx-auto mb-4" />
+          <h2 className="font-extrabold text-3xl md:text-4xl text-white mb-4" style={{ fontFamily: 'Archivo, sans-serif' }}>
+            Get Your Free Quote
+          </h2>
+          <p className="text-gray-400 text-base max-w-xl mx-auto">
+            Tell us about your space and we'll provide an instant estimate. No commitment required.
+          </p>
+        </div>
 
-                {/* Square Footage Slider */}
-                <div>
-                  <label className="text-[10px] uppercase tracking-widest text-gray-500 block mb-4">
-                    Approximate Sq. Footage
-                  </label>
-                  <input
-                    type="range"
-                    min="500"
-                    max="5000"
-                    step="100"
-                    value={sqFootage}
-                    onChange={(e) => setSqFootage(Number(e.target.value))}
-                    className="w-full accent-teal-400 bg-slate-800 h-1 rounded-lg appearance-none cursor-pointer"
-                    style={{
-                      WebkitAppearance: 'none',
-                      background: `linear-gradient(to right, #00e5c7 0%, #00e5c7 ${((sqFootage - 500) / 4500) * 100}%, #1c2330 ${((sqFootage - 500) / 4500) * 100}%, #1c2330 100%)`
-                    }}
-                  />
-                  <div className="flex justify-between mt-3">
-                    <span className="text-[10px] text-gray-600 font-mono">500 SQFT</span>
-                    <span className="text-xs text-teal-400 font-mono font-bold">{sqFootage} SQFT</span>
-                    <span className="text-[10px] text-gray-600 font-mono">5000 SQFT</span>
-                  </div>
+        <div className="bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-md border border-slate-700/50 rounded-2xl p-8 md:p-12 shadow-2xl">
+          <div className="flex flex-col lg:flex-row gap-12">
+
+            {/* Left Side - Service Selection */}
+            <div className="flex-1">
+              <h3 className="text-xl font-bold text-white mb-6" style={{ fontFamily: 'Archivo, sans-serif' }}>
+                Choose Your Service
+              </h3>
+
+              <div className="space-y-4 mb-8">
+                {serviceTiers.map((tier) => (
+                  <button
+                    key={tier.id}
+                    onClick={() => setSelectedTier(tier.id)}
+                    className={`
+                      w-full text-left p-5 rounded-xl border-2 transition-all duration-300
+                      ${selectedTier === tier.id
+                        ? 'border-teal-400 bg-teal-400/5 shadow-lg'
+                        : 'border-slate-700 hover:border-slate-600 bg-slate-900/50'
+                      }
+                    `}
+                  >
+                    <div className="flex items-start justify-between mb-2">
+                      <h4 className="font-bold text-lg text-white" style={{ fontFamily: 'Archivo, sans-serif' }}>
+                        {tier.name}
+                      </h4>
+                      {selectedTier === tier.id && (
+                        <CheckCircle className="w-5 h-5 text-teal-400 flex-shrink-0 ml-2" />
+                      )}
+                    </div>
+                    <p className="text-gray-400 text-sm mb-3">{tier.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {tier.features.slice(0, 2).map((feature) => (
+                        <span
+                          key={feature}
+                          className="text-xs text-gray-500 bg-slate-800 px-2 py-1 rounded"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                  </button>
+                ))}
+              </div>
+
+              {/* Square Footage */}
+              <div>
+                <label className="text-sm font-medium text-gray-300 block mb-4">
+                  How large is your space?
+                </label>
+                <input
+                  type="range"
+                  min="500"
+                  max="5000"
+                  step="100"
+                  value={sqFootage}
+                  onChange={(e) => setSqFootage(Number(e.target.value))}
+                  className="w-full accent-teal-400 bg-slate-700 h-2 rounded-lg appearance-none cursor-pointer"
+                  style={{
+                    WebkitAppearance: 'none',
+                    background: `linear-gradient(to right, #00e5c7 0%, #00e5c7 ${((sqFootage - 500) / 4500) * 100}%, #374151 ${((sqFootage - 500) / 4500) * 100}%, #374151 100%)`
+                  }}
+                />
+                <div className="flex justify-between mt-3">
+                  <span className="text-sm text-gray-500">500 sq ft</span>
+                  <span className="text-lg font-bold text-teal-400">{sqFootage.toLocaleString()} sq ft</span>
+                  <span className="text-sm text-gray-500">5,000 sq ft</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Side - Price Summary */}
-            <div className="w-full md:w-72 bg-slate-950/50 border border-slate-800 rounded-xl p-6 flex flex-col justify-between shadow-xl">
-              <div>
-                <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-1">
-                  Estimated Investment
-                </p>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-heading font-800 text-white">
-                    ${estimatedPrice}
-                  </span>
-                  <span className="text-sm text-gray-600 font-normal">.00</span>
+            {/* Right Side - Quote Summary */}
+            <div className="w-full lg:w-80 flex flex-col">
+              <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-600/50 rounded-xl p-6 flex-1">
+                <h3 className="text-lg font-bold text-white mb-6" style={{ fontFamily: 'Archivo, sans-serif' }}>
+                  Your Quote
+                </h3>
+
+                <div className="mb-6">
+                  <p className="text-sm text-gray-400 mb-2">Estimated Total</p>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-5xl font-extrabold text-white" style={{ fontFamily: 'Archivo, sans-serif' }}>
+                      ${estimatedPrice}
+                    </span>
+                  </div>
                 </div>
-                <p className="text-[10px] text-teal-400 mt-2 font-mono uppercase tracking-tighter flex items-center gap-1.5">
-                  <span className="inline-block w-1.5 h-1.5 bg-teal-400 rounded-full animate-pulse"></span>
-                  Specialist Available Tomorrow
-                </p>
+
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-center gap-3 text-sm">
+                    <div className="w-10 h-10 bg-teal-400/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-5 h-5 text-teal-400" />
+                    </div>
+                    <div>
+                      <p className="text-gray-400 text-xs">Estimated Time</p>
+                      <p className="text-white font-medium">{currentTier.duration} hours</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 text-sm">
+                    <div className="w-10 h-10 bg-teal-400/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Calendar className="w-5 h-5 text-teal-400" />
+                    </div>
+                    <div>
+                      <p className="text-gray-400 text-xs">Next Available</p>
+                      <p className="text-white font-medium">Tomorrow or sooner</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="border-t border-slate-700 pt-4 mb-4">
+                  <div className="text-xs text-gray-500 space-y-1">
+                    <div className="flex justify-between">
+                      <span>Service:</span>
+                      <span className="text-gray-300">{currentTier.name}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Size:</span>
+                      <span className="text-gray-300">{sqFootage.toLocaleString()} sq ft</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              
-              <div className="mt-8 space-y-3">
-                <div className="flex justify-between text-[11px] border-b border-slate-800 pb-2">
-                  <span className="text-gray-500 text-xs">Est. Duration</span>
-                  <span className="text-white font-mono">{currentTier.duration} HRS</span>
-                </div>
-                <div className="flex justify-between text-[11px] border-b border-slate-800 pb-2">
-                  <span className="text-gray-500 text-xs">Service Tier</span>
-                  <span className="text-white font-mono uppercase">{currentTier.id}</span>
-                </div>
-                <button
-                  onClick={handleBooking}
-                  disabled={isSubmitting}
-                  className="w-full py-4 rounded uppercase text-xs tracking-widest mt-4 transition-all duration-300 font-bold disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0_0_30px_rgba(0,229,199,0.3)] hover:-translate-y-0.5"
-                  style={{
-                    background: '#00e5c7',
-                    color: '#0c1017',
-                    boxShadow: '0 0 20px rgba(0, 229, 199, 0.15), 0 0 60px rgba(0, 229, 199, 0.05)'
-                  }}
-                >
-                  {isSubmitting ? 'Processing...' : 'Confirm Selection'}
-                </button>
-                <p className="text-gray-600 text-[10px] text-center tracking-wide">
-                  No commitment required · Response within 2 hours
-                </p>
-              </div>
+
+              <button
+                onClick={handleBooking}
+                disabled={isSubmitting}
+                className="w-full py-4 rounded-xl text-sm font-bold uppercase tracking-wide mt-4 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0_0_30px_rgba(0,229,199,0.3)] hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                style={{
+                  background: '#00e5c7',
+                  color: '#0c1017',
+                  boxShadow: '0 0 20px rgba(0, 229, 199, 0.15), 0 0 60px rgba(0, 229, 199, 0.05)'
+                }}
+              >
+                {isSubmitting ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                    Processing...
+                  </>
+                ) : (
+                  <>
+                    Book Your Cleaning
+                    <CheckCircle className="w-4 h-4" />
+                  </>
+                )}
+              </button>
+
+              <p className="text-gray-500 text-xs text-center mt-3">
+                No commitment · Free quote · Satisfaction guaranteed
+              </p>
             </div>
           </div>
         </div>
