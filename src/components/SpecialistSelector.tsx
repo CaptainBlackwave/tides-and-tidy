@@ -26,47 +26,32 @@ interface Specialist {
 const specialists: Specialist[] = [
   {
     id: 1,
-    name: 'Ana Voss',
+    name: 'Alexia Parnell',
     role: 'Senior Cleaning Specialist',
     experience: '8 Years',
     certifications: ['OSHA HazCom', 'ISSA CIMS', 'Marble Care'],
     philosophy: 'Every home deserves to be clean and welcoming. I take pride in ensuring every surface is spotless and every room feels fresh for my clients.',
-    image: 'https://picsum.photos/seed/specialistana/600/750',
+    image: 'https://picsum.photos/seed/specialistalexia/600/750',
     nextAvailable: 'Tomorrow, 9:00 AM',
     reviews: [
-      { id: 1, client: 'Sarah M.', rating: 5, date: '2 weeks ago', text: 'Ana transformed my chaotic kitchen into a sanctuary. Her attention to detail is unmatched.' },
+      { id: 1, client: 'Sarah M.', rating: 5, date: '2 weeks ago', text: 'Alexia transformed my chaotic kitchen into a sanctuary. Her attention to detail is unmatched.' },
       { id: 2, client: 'Michael R.', rating: 5, date: '1 month ago', text: 'She treats every surface with such care. My home has never felt this organized.' },
-      { id: 3, client: 'Jennifer K.', rating: 5, date: '1 month ago', text: 'Ana is thorough, efficient, and always leaves my home sparkling clean.' }
+      { id: 3, client: 'Jennifer K.', rating: 5, date: '1 month ago', text: 'Alexia is thorough, efficient, and always leaves my home sparkling clean.' }
     ]
   },
   {
     id: 2,
-    name: 'Marc Chen',
+    name: 'Jenna Spencer',
     role: 'Deep Cleaning Specialist',
     experience: '6 Years',
     certifications: ['Chemical Safety', 'IAQA Certified', 'HVAC Detail'],
     philosophy: 'Deep cleaning is about more than what you can see. I clean the hidden areas that most services miss — the vents, behind appliances, the grout lines. That\'s the difference.',
-    image: 'https://picsum.photos/seed/specialistmarc/600/750',
+    image: 'https://picsum.photos/seed/specialistjenna/600/750',
     nextAvailable: 'Tomorrow, 2:00 PM',
     reviews: [
-      { id: 1, client: 'David L.', rating: 5, date: '3 days ago', text: 'Marc\'s deep cleaning revealed a home I didn\'t know I had. The air quality difference is noticeable.' },
-      { id: 2, client: 'Emily T.', rating: 5, date: '2 weeks ago', text: 'He found dust in places I didn\'t know existed. Thorough is an understatement.' },
+      { id: 1, client: 'David L.', rating: 5, date: '3 days ago', text: 'Jenna\'s deep cleaning revealed a home I didn\'t know I had. The air quality difference is noticeable.' },
+      { id: 2, client: 'Emily T.', rating: 5, date: '2 weeks ago', text: 'She found dust in places I didn\'t know existed. Thorough is an understatement.' },
       { id: 3, client: 'Robert W.', rating: 5, date: '3 weeks ago', text: 'The HVAC detail made such a difference. My allergies have improved significantly.' }
-    ]
-  },
-  {
-    id: 3,
-    name: 'Elena Durand',
-    role: 'Move-In/Move-Out Specialist',
-    experience: '11 Years',
-    certifications: ['Move Compliance', 'Hardwood Certified', 'Lead-Safe EPA'],
-    philosophy: 'Moving is stressful enough without worrying about the cleaning. I make sure your new home is move-in ready or your old one is spotless for the next owners.',
-    image: 'https://picsum.photos/seed/specialistelena/600/750',
-    nextAvailable: 'Friday, 10:00 AM',
-    reviews: [
-      { id: 1, client: 'James & Priya K.', rating: 5, date: '1 week ago', text: 'Elena made our move-in day magical. Everything was pristine and ready for our new chapter.' },
-      { id: 2, client: 'Carlos M.', rating: 5, date: '2 weeks ago', text: 'Move-out service that got us our full security deposit back. Worth every penny.' },
-      { id: 3, client: 'Amanda S.', rating: 5, date: '1 month ago', text: 'She handled our hardwood floors with such expertise. The home felt brand new.' }
     ]
   }
 ]
