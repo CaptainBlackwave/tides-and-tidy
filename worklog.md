@@ -156,3 +156,24 @@ Stage Summary:
 - Specialist roles and quotes now focus on cleaning expertise and customer benefits
 - Maintained premium, professional tone while being clear and practical
 - All changes compiled successfully with no linting errors
+
+---
+Task ID: 4
+Agent: Z.ai Code
+Task: Fix Before/After slider issue - second slider not working properly
+
+Work Log:
+- Identified the bug: Both Before/After sliders were using the same ID "ba-slider-container"
+- This caused the handleMove function to always reference the first slider's container when calculating position
+- Fixed by using React refs instead of document.getElementById
+- Added unique sliderId prop to each BeforeAfterSlider instance
+- Updated handleMove to use containerRef.current instead of document.getElementById
+- Passed unique IDs (ba-slider-1, ba-slider-2) to each slider instance
+- Added useRef to imports from 'react'
+
+Stage Summary:
+- Successfully fixed the Before/After slider bug
+- Both sliders now work independently and correctly
+- Used proper React patterns (useRef) instead of DOM manipulation
+- All code passes ESLint checks
+- Page loads successfully (GET / 200)

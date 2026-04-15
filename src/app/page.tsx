@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Menu, X, Phone, Mail, Instagram, Linkedin, Twitter, ChevronLeft, ChevronRight } from 'lucide-react'
 import BookingConfigurator from '@/components/BookingConfigurator'
 import SpecialistSelector from '@/components/SpecialistSelector'
@@ -207,6 +207,7 @@ export default function Home() {
               serviceTier="Deep Clean Service"
               quote="I didn't realize how much the state of my kitchen was weighing on me until Tides & Tidy restored it. I got back 10 hours a week — and my sanity."
               delay="0.1s"
+              sliderId="ba-slider-1"
             />
             <BeforeAfterSlider
               beforeImage="https://picsum.photos/seed/dirtybathroom77/900/560"
@@ -215,6 +216,7 @@ export default function Home() {
               serviceTier="Move-In Service"
               quote="We moved into our new home and it didn't feel like ours until the team finished. Every surface gleamed. It was like walking into a brand new home."
               delay="0.2s"
+              sliderId="ba-slider-2"
             />
           </div>
         </div>
@@ -283,21 +285,22 @@ export default function Home() {
 }
 
 // Before/After Slider Component
-function BeforeAfterSlider({ beforeImage, afterImage, clientName, serviceTier, quote, delay }: {
+function BeforeAfterSlider({ beforeImage, afterImage, clientName, serviceTier, quote, delay, sliderId }: {
   beforeImage: string
   afterImage: string
   clientName: string
   serviceTier: string
   quote: string
   delay: string
+  sliderId: string
 }) {
+  const containerRef = useRef<HTMLDivElement>(null)
   const [sliderPosition, setSliderPosition] = useState(50)
   const [isDragging, setIsDragging] = useState(false)
 
   const handleMove = (clientX: number) => {
-    const container = document.getElementById('ba-slider-container')
-    if (container) {
-      const rect = container.getBoundingClientRect()
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect()
       const pos = ((clientX - rect.left) / rect.width) * 100
       setSliderPosition(Math.max(4, Math.min(96, pos)))
     }
@@ -313,7 +316,8 @@ function BeforeAfterSlider({ beforeImage, afterImage, clientName, serviceTier, q
   return (
     <div className="reveal" style={{ transitionDelay: delay }}>
       <div
-        id="ba-slider-container"
+        ref={containerRef}
+        id={sliderId}
         className="relative rounded-xl overflow-hidden aspect-[16/10] cursor-col-resize select-none"
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
