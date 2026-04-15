@@ -252,7 +252,7 @@ export default function BookingConfigurator() {
                     </div>
                     <div className="flex justify-between">
                       <span>Rate:</span>
-                      <span className="text-gray-700 dark:text-gray-300">$${ADDITIONAL_HOUR_PRICE}/hr after {BASE_HOURS}hr base</span>
+                      <span className="text-gray-700 dark:text-gray-300">{`$${ADDITIONAL_HOUR_PRICE}/hr after ${BASE_HOURS}hr base`}</span>
                     </div>
                   </div>
                 </div>
