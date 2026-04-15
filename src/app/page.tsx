@@ -5,6 +5,8 @@ import { Menu, X, Phone, Mail, Instagram, Linkedin, Twitter, ChevronLeft, Chevro
 import BookingConfigurator from '@/components/BookingConfigurator'
 import SpecialistSelector from '@/components/SpecialistSelector'
 import StudioDashboard from '@/components/StudioDashboard'
+import { ThemeToggle } from '@/components/ThemeToggle'
+import ContactForm from '@/components/ContactForm'
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -44,50 +46,51 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0c1017] text-[#eef0f2]" style={{ fontFamily: 'Inter, sans-serif' }}>
-      {/* Film grain overlay */}
-      <div className="fixed inset-0 pointer-events-none z-[9999] opacity-40" style={{
+    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-[#0c1017] text-gray-900 dark:text-[#eef0f2]" style={{ fontFamily: 'Inter, sans-serif' }}>
+      {/* Film grain overlay - dark mode only */}
+      <div className="dark:fixed dark:inset-0 pointer-events-none z-[9999] dark:opacity-40" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E")`
       }} />
 
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 border-b ${
-        isScrolled ? 'bg-[rgba(12,16,23,0.95)] backdrop-blur-xl border-[#222830]' : 'border-transparent'
+        isScrolled ? 'bg-[rgba(12,16,23,0.95)] dark:bg-[rgba(12,16,23,0.95)] bg-white/95 backdrop-blur-xl border-[#222830] dark:border-[#222830] border-gray-200' : 'border-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-          <a href="#" className="font-heading font-extrabold text-base tracking-[0.15em] uppercase text-white" style={{ fontFamily: 'Archivo, sans-serif' }}>
-            TIDES <span className="text-teal-400">&</span> TIDY
+          <a href="#" className="font-heading font-extrabold text-base tracking-[0.15em] uppercase text-gray-900 dark:text-white" style={{ fontFamily: 'Archivo, sans-serif' }}>
+            TIDES <span className="text-teal-600 dark:text-teal-400">&</span> TIDY
           </a>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#services" className="text-sm text-gray-400 hover:text-white transition-colors duration-200 tracking-wide">Services</a>
-            <a href="#specialists" className="text-sm text-gray-400 hover:text-white transition-colors duration-200 tracking-wide">Specialists</a>
-            <a href="#transformations" className="text-sm text-gray-400 hover:text-white transition-colors duration-200 tracking-wide">Transformations</a>
-            <a href="#book" className="px-5 py-2 rounded-md text-xs uppercase tracking-wider font-bold transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,199,0.3)] hover:-translate-y-0.5" style={{
-              background: '#00e5c7',
-              color: '#0c1017',
+            <a href="#services" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 tracking-wide">Services</a>
+            <a href="#specialists" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 tracking-wide">Specialists</a>
+            <a href="#transformations" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 tracking-wide">Transformations</a>
+            <a href="#contact" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 tracking-wide">Contact</a>
+            <ThemeToggle />
+            <a href="#book" className="px-5 py-2 rounded-md text-xs uppercase tracking-wider font-bold transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,199,0.3)] hover:-translate-y-0.5 bg-teal-600 dark:bg-[#00e5c7] text-white dark:text-[#0c1017]" style={{
               boxShadow: '0 0 20px rgba(0, 229, 199, 0.15), 0 0 60px rgba(0, 229, 199, 0.05)'
             }}>
               Book Now
             </a>
           </div>
-          <button onClick={() => setIsMenuOpen(true)} className="md:hidden text-white p-2" aria-label="Menu">
-            <Menu className="w-5.5 h-5.5" />
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button onClick={() => setIsMenuOpen(true)} className="text-gray-900 dark:text-white p-2" aria-label="Menu">
+              <Menu className="w-5.5 h-5.5" />
+            </button>
+          </div>
         </div>
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-y-0 right-0 w-72 bg-[#131820]/98 backdrop-blur-xl z-[1100] border-l border-slate-700/50 flex flex-col p-8 pt-20 transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <button onClick={() => setIsMenuOpen(false)} className="absolute top-5 right-5 text-gray-400 hover:text-white transition-colors">
+      <div className={`fixed inset-y-0 right-0 w-72 bg-gray-100/98 dark:bg-[#131820]/98 backdrop-blur-xl z-[1100] border-l border-gray-200 dark:border-slate-700/50 flex flex-col p-8 pt-20 transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <button onClick={() => setIsMenuOpen(false)} className="absolute top-5 right-5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
           <X className="w-5.5 h-5.5" />
         </button>
-        <a href="#services" onClick={() => scrollToSection('services')} className="text-lg font-bold text-gray-300 hover:text-teal-400 py-3 border-b border-slate-700/40 transition-colors" style={{ fontFamily: 'Archivo, sans-serif' }}>Services</a>
-        <a href="#specialists" onClick={() => scrollToSection('specialists')} className="text-lg font-bold text-gray-300 hover:text-teal-400 py-3 border-b border-slate-700/40 transition-colors" style={{ fontFamily: 'Archivo, sans-serif' }}>Specialists</a>
-        <a href="#transformations" onClick={() => scrollToSection('transformations')} className="text-lg font-bold text-gray-300 hover:text-teal-400 py-3 border-b border-slate-700/40 transition-colors" style={{ fontFamily: 'Archivo, sans-serif' }}>Transformations</a>
-        <a href="#book" onClick={() => scrollToSection('book')} className="mt-8 py-3 rounded-md text-center text-sm uppercase tracking-wider font-bold transition-all duration-300" style={{
-          background: '#00e5c7',
-          color: '#0c1017'
-        }}>
+        <a href="#services" onClick={() => scrollToSection('services')} className="text-lg font-bold text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 py-3 border-b border-gray-200 dark:border-slate-700/40 transition-colors" style={{ fontFamily: 'Archivo, sans-serif' }}>Services</a>
+        <a href="#specialists" onClick={() => scrollToSection('specialists')} className="text-lg font-bold text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 py-3 border-b border-gray-200 dark:border-slate-700/40 transition-colors" style={{ fontFamily: 'Archivo, sans-serif' }}>Specialists</a>
+        <a href="#transformations" onClick={() => scrollToSection('transformations')} className="text-lg font-bold text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 py-3 border-b border-gray-200 dark:border-slate-700/40 transition-colors" style={{ fontFamily: 'Archivo, sans-serif' }}>Transformations</a>
+        <a href="#contact" onClick={() => scrollToSection('contact')} className="text-lg font-bold text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 py-3 border-b border-gray-200 dark:border-slate-700/40 transition-colors" style={{ fontFamily: 'Archivo, sans-serif' }}>Contact</a>
+        <a href="#book" onClick={() => scrollToSection('book')} className="mt-8 py-3 rounded-md text-center text-sm uppercase tracking-wider font-bold transition-all duration-300 bg-teal-600 dark:bg-[#00e5c7] text-white dark:text-[#0c1017]">
           Book Now
         </a>
       </div>
@@ -97,26 +100,24 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://picsum.photos/seed/pristinesurface/1920/1080" alt="" className="hero-bg w-full h-full object-cover grayscale contrast-[1.15]" style={{ animation: 'kenBurns 20s ease-in-out infinite' }} />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0c1017]/80 via-[#0c1017]/50 to-[#0c1017]"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0c1017]/60 via-transparent to-[#0c1017]/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0c1017]/80 via-[#0c1017]/50 to-[#0c1017] dark:from-[#0c1017]/80 dark:via-[#0c1017]/50 dark:to-[#0c1017] from-gray-900/70 via-gray-900/40 to-gray-900"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0c1017]/60 via-transparent to-[#0c1017]/60 dark:from-[#0c1017]/60 dark:via-transparent dark:to-[#0c1017]/60 from-gray-900/50 via-transparent to-gray-900/50"></div>
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <div className={`reveal transition-all duration-900 ease-out ${visibleElements.has('hero-1') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-1">
-            <span className="inline-block text-[11px] font-bold tracking-[0.25em] uppercase text-teal-400 border border-teal-400/20 bg-teal-400/5 px-4 py-1.5 rounded-full" style={{ fontFamily: 'Archivo, sans-serif' }}>
+            <span className="inline-block text-[11px] font-bold tracking-[0.25em] uppercase text-teal-600 dark:text-teal-400 border border-teal-600/20 dark:border-teal-400/20 bg-teal-600/5 dark:bg-teal-400/5 px-4 py-1.5 rounded-full" style={{ fontFamily: 'Archivo, sans-serif' }}>
               Professional Cleaning Services
             </span>
           </div>
-          <h1 className={`font-extrabold text-4xl sm:text-5xl md:text-7xl leading-[1.05] tracking-tight text-white mb-6 reveal transition-all duration-900 ease-out delay-100 ${visibleElements.has('hero-2') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-2" style={{ fontFamily: 'Archivo, sans-serif' }}>
+          <h1 className={`font-extrabold text-4xl sm:text-5xl md:text-7xl leading-[1.05] tracking-tight text-white dark:text-white mb-6 reveal transition-all duration-900 ease-out delay-100 ${visibleElements.has('hero-2') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-2" style={{ fontFamily: 'Archivo, sans-serif' }}>
             Expert Cleaning.<br />
-            <span className="text-gray-400">Spotless Results Every Time.</span>
+            <span className="text-gray-200 dark:text-gray-400">Spotless Results Every Time.</span>
           </h1>
-          <p className={`text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light reveal transition-all duration-900 ease-out delay-200 ${visibleElements.has('hero-3') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-3">
+          <p className={`text-gray-200 dark:text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light reveal transition-all duration-900 ease-out delay-200 ${visibleElements.has('hero-3') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-3">
             Professional cleaning for homes and businesses. Our trained specialists deliver thorough, reliable service that transforms your space into a pristine environment you'll love coming home to.
           </p>
           <div className={`reveal transition-all duration-900 ease-out delay-300 ${visibleElements.has('hero-4') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-4">
-            <a href="#book" className="inline-block px-8 py-3.5 rounded-md text-sm uppercase tracking-wider font-bold transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,199,0.3)] hover:-translate-y-0.5" style={{
-              background: '#00e5c7',
-              color: '#0c1017',
+            <a href="#book" className="inline-block px-8 py-3.5 rounded-md text-sm uppercase tracking-wider font-bold transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,199,0.3)] hover:-translate-y-0.5 bg-teal-600 dark:bg-[#00e5c7] text-white dark:text-[#0c1017]" style={{
               boxShadow: '0 0 20px rgba(0, 229, 199, 0.15), 0 0 60px rgba(0, 229, 199, 0.05)'
             }}>
               Book Your Cleaning
@@ -124,8 +125,8 @@ export default function Home() {
           </div>
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-          <span className="text-[10px] tracking-[0.2em] uppercase text-gray-500">Scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-gray-500 to-transparent"></div>
+          <span className="text-[10px] tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">Scroll</span>
+          <div className="w-px h-8 bg-gradient-to-b from-gray-400 dark:from-gray-500 to-transparent"></div>
         </div>
       </section>
 
@@ -230,40 +231,43 @@ export default function Home() {
       {/* Booking Configurator - Using new component */}
       <BookingConfigurator />
 
+      {/* Contact Form */}
+      <ContactForm />
+
       {/* Footer */}
-      <footer className="border-t border-slate-700/30 py-12 mt-auto">
+      <footer className="border-t border-gray-200 dark:border-slate-700/30 py-12 mt-auto bg-white dark:bg-transparent">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <span className="font-extrabold text-sm tracking-[0.15em] uppercase text-white" style={{ fontFamily: 'Archivo, sans-serif' }}>
-                TIDES <span className="text-teal-400">&</span> TIDY
+              <span className="font-extrabold text-sm tracking-[0.15em] uppercase text-gray-900 dark:text-white" style={{ fontFamily: 'Archivo, sans-serif' }}>
+                TIDES <span className="text-teal-600 dark:text-teal-400">&</span> TIDY
               </span>
-              <p className="text-gray-600 text-xs mt-1">Precision cleaning. Absolute peace of mind.</p>
+              <p className="text-gray-600 dark:text-gray-400 text-xs mt-1">Precision cleaning. Absolute peace of mind.</p>
             </div>
-            <div className="flex items-center gap-6 text-xs text-gray-500">
-              <a href="tel:+18005551234" className="hover:text-gray-300 transition-colors flex items-center gap-1.5">
+            <div className="flex items-center gap-6 text-xs text-gray-500 dark:text-gray-500">
+              <a href="tel:+18005551234" className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors flex items-center gap-1.5">
                 <Phone className="w-3.5 h-3.5" />
                 (800) 555-1234
               </a>
-              <a href="mailto:hello@tidesandtidy.com" className="hover:text-gray-300 transition-colors flex items-center gap-1.5">
+              <a href="mailto:hello@tidesandtidy.com" className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors flex items-center gap-1.5">
                 <Mail className="w-3.5 h-3.5" />
                 hello@tidesandtidy.com
               </a>
             </div>
             <div className="flex items-center gap-4">
-              <a href="#" className="text-gray-600 hover:text-gray-300 transition-colors" aria-label="Instagram">
+              <a href="#" className="text-gray-600 dark:text-gray-600 hover:text-gray-900 dark:hover:text-gray-300 transition-colors" aria-label="Instagram">
                 <Instagram className="w-4.5 h-4.5" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-gray-300 transition-colors" aria-label="LinkedIn">
+              <a href="#" className="text-gray-600 dark:text-gray-600 hover:text-gray-900 dark:hover:text-gray-300 transition-colors" aria-label="LinkedIn">
                 <Linkedin className="w-4.5 h-4.5" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-gray-300 transition-colors" aria-label="Twitter">
+              <a href="#" className="text-gray-600 dark:text-gray-600 hover:text-gray-900 dark:hover:text-gray-300 transition-colors" aria-label="Twitter">
                 <Twitter className="w-4.5 h-4.5" />
               </a>
             </div>
           </div>
-          <div className="mt-8 pt-6 border-t border-slate-700/20 text-center">
-            <p className="text-gray-700 text-[11px] tracking-wide">&copy; 2025 Tides & Tidy. All rights reserved.</p>
+          <div className="mt-8 pt-6 border-t border-gray-200 dark:border-slate-700/20 text-center">
+            <p className="text-gray-700 dark:text-gray-500 text-[11px] tracking-wide">&copy; 2025 Tides & Tidy. All rights reserved.</p>
           </div>
         </div>
       </footer>
