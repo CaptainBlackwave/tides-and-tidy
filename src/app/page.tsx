@@ -235,12 +235,12 @@ export default function Home() {
       <ContactForm />
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 dark:border-slate-700/30 py-12 mt-auto bg-white dark:bg-transparent">
+      <footer className="border-t border-gray-200 dark:border-slate-700/30 pt-12 pb-8 mt-auto bg-white dark:bg-transparent">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <span className="font-extrabold text-sm tracking-[0.15em] uppercase text-gray-900 dark:text-white" style={{ fontFamily: 'Archivo, sans-serif' }}>
-                TIDES <span className="text-teal-600 dark:text-teal-400">&</span> TIDY
+              <span className="font-extrabold text-sm tracking-[0.15em] uppercase text-[#093457] dark:text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                TIDES <span className="text-[#00cccc]">&</span> TIDY
               </span>
               <p className="text-gray-600 dark:text-gray-400 text-xs mt-1">Precision cleaning. Absolute peace of mind.</p>
             </div>
@@ -269,6 +269,35 @@ export default function Home() {
           <div className="mt-8 pt-6 border-t border-gray-200 dark:border-slate-700/20 text-center">
             <p className="text-gray-700 dark:text-gray-500 text-[11px] tracking-wide">&copy; 2025 Tides & Tidy. All rights reserved.</p>
           </div>
+          
+          {/* Atlantic East Coast Vibe - Tides Tech Attribution */}
+          <div className="mt-6 relative overflow-hidden rounded-lg">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#093457]/5 via-[#00cccc]/10 to-[#093457]/5 dark:from-[#093457]/10 dark:via-[#00cccc]/5 dark:to-[#093457]/10"></div>
+            
+            <div className="relative flex items-center justify-center gap-3 py-4">
+              {/* Wave animation - left side */}
+              <div className="flex items-center gap-0.5" style={{ animation: 'wave 1.5s ease-in-out infinite' }}>
+                <span className="w-1 h-3 bg-[#00cccc]/30 rounded-full" style={{ animationDelay: '0s' }}></span>
+                <span className="w-1 h-4 bg-[#00cccc]/50 rounded-full" style={{ animationDelay: '0.1s' }}></span>
+                <span className="w-1 h-3 bg-[#00cccc]/40 rounded-full" style={{ animationDelay: '0.2s' }}></span>
+                <span className="w-1 h-5 bg-[#00cccc]/60 rounded-full" style={{ animationDelay: '0.3s' }}></span>
+                <span className="w-1 h-3 bg-[#00cccc]/30 rounded-full" style={{ animationDelay: '0.4s' }}></span>
+              </div>
+              
+              <span className="text-[#093457]/80 dark:text-[#eef0f2]/60 text-xs font-medium tracking-wide flex items-center gap-1.5" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                Made By <span className="font-semibold text-[#00cccc]">Tides Tech</span> With <span className="animate-pulse">❤️</span> <span className="inline-block" style={{ animation: 'wave 2s ease-in-out infinite' }}>👋</span>
+              </span>
+              
+              {/* Wave animation - right side */}
+              <div className="flex items-center gap-0.5" style={{ animation: 'wave 1.5s ease-in-out infinite reverse' }}>
+                <span className="w-1 h-4 bg-[#093457]/20 rounded-full" style={{ animationDelay: '0s' }}></span>
+                <span className="w-1 h-3 bg-[#093457]/30 rounded-full" style={{ animationDelay: '0.1s' }}></span>
+                <span className="w-1 h-5 bg-[#093457]/40 rounded-full" style={{ animationDelay: '0.2s' }}></span>
+                <span className="w-1 h-3 bg-[#093457]/25 rounded-full" style={{ animationDelay: '0.3s' }}></span>
+                <span className="w-1 h-4 bg-[#093457]/20 rounded-full" style={{ animationDelay: '0.4s' }}></span>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
 
@@ -278,11 +307,15 @@ export default function Home() {
           50% { transform: scale(1.08) translate(-1%, -0.5%); }
           100% { transform: scale(1) translate(0, 0); }
         }
+        @keyframes wave {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-4px); }
+        }
         .hero-bg { animation: kenBurns 20s ease-in-out infinite; }
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0c1017; }
-        ::-webkit-scrollbar-thumb { background: #252d3a; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #2e3748; }
+        ::-webkit-scrollbar-track { background: #093457; }
+        ::-webkit-scrollbar-thumb { background: #00cccc; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00b3b3; }
       `}</style>
     </div>
   )
