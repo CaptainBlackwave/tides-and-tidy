@@ -272,29 +272,29 @@ export default function Home() {
           
           {/* Atlantic East Coast Vibe - Tides Tech Attribution */}
           <div className="mt-8 relative overflow-hidden rounded-xl">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#093457]/10 via-[#00cccc]/20 to-[#093457]/10 dark:from-[#093457]/20 dark:via-[#00cccc]/15 dark:to-[#093457]/20"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#00cccc]/15 via-[#00cccc]/25 to-[#00cccc]/15 dark:from-[#00cccc]/10 dark:via-[#00cccc]/20 dark:to-[#00cccc]/10"></div>
             
             <div className="relative flex items-center justify-center gap-4 py-6">
               {/* Wave animation - left side */}
               <div className="flex items-center gap-1" style={{ animation: 'wave 1.5s ease-in-out infinite' }}>
-                <span className="w-1.5 h-4 bg-[#00cccc]/40 rounded-full" style={{ animationDelay: '0s' }}></span>
-                <span className="w-1.5 h-6 bg-[#00cccc]/60 rounded-full" style={{ animationDelay: '0.1s' }}></span>
-                <span className="w-1.5 h-4 bg-[#00cccc]/50 rounded-full" style={{ animationDelay: '0.2s' }}></span>
-                <span className="w-1.5 h-7 bg-[#00cccc]/70 rounded-full" style={{ animationDelay: '0.3s' }}></span>
-                <span className="w-1.5 h-5 bg-[#00cccc]/50 rounded-full" style={{ animationDelay: '0.4s' }}></span>
+                <span className="w-2 h-5 bg-[#00cccc]/50 rounded-full" style={{ animationDelay: '0s' }}></span>
+                <span className="w-2 h-7 bg-[#00cccc]/70 rounded-full" style={{ animationDelay: '0.1s' }}></span>
+                <span className="w-2 h-5 bg-[#00cccc]/60 rounded-full" style={{ animationDelay: '0.2s' }}></span>
+                <span className="w-2 h-8 bg-[#00cccc]/80 rounded-full" style={{ animationDelay: '0.3s' }}></span>
+                <span className="w-2 h-6 bg-[#00cccc]/70 rounded-full" style={{ animationDelay: '0.4s' }}></span>
               </div>
               
-              <span className="text-[#093457] dark:text-[#eef0f2] text-base md:text-lg font-semibold tracking-wide flex items-center gap-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                Made By <span className="font-extrabold text-[#00cccc]">Tides Tech</span> With <span className="animate-pulse text-xl">❤️</span> <span className="inline-block text-2xl" style={{ animation: 'wave 2s ease-in-out infinite' }}>👋</span>
+              <span className="text-[#093457] dark:text-[#eef0f2] text-lg md:text-xl font-semibold tracking-wide flex items-center gap-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                Made By <span className="font-extrabold text-[#00cccc]">Tides Tech</span> With <span className="animate-pulse text-2xl">❤️</span> <span className="inline-block text-3xl animate-bounce">🌊</span>
               </span>
               
               {/* Wave animation - right side */}
               <div className="flex items-center gap-1" style={{ animation: 'wave 1.5s ease-in-out infinite reverse' }}>
-                <span className="w-1.5 h-6 bg-[#093457]/30 rounded-full" style={{ animationDelay: '0s' }}></span>
-                <span className="w-1.5 h-4 bg-[#093457]/40 rounded-full" style={{ animationDelay: '0.1s' }}></span>
-                <span className="w-1.5 h-7 bg-[#093457]/50 rounded-full" style={{ animationDelay: '0.2s' }}></span>
-                <span className="w-1.5 h-5 bg-[#093457]/35 rounded-full" style={{ animationDelay: '0.3s' }}></span>
-                <span className="w-1.5 h-6 bg-[#093457]/30 rounded-full" style={{ animationDelay: '0.4s' }}></span>
+                <span className="w-2 h-7 bg-[#00cccc]/40 rounded-full" style={{ animationDelay: '0s' }}></span>
+                <span className="w-2 h-5 bg-[#00cccc]/50 rounded-full" style={{ animationDelay: '0.1s' }}></span>
+                <span className="w-2 h-8 bg-[#00cccc]/60 rounded-full" style={{ animationDelay: '0.2s' }}></span>
+                <span className="w-2 h-6 bg-[#00cccc]/50 rounded-full" style={{ animationDelay: '0.3s' }}></span>
+                <span className="w-2 h-7 bg-[#00cccc]/40 rounded-full" style={{ animationDelay: '0.4s' }}></span>
               </div>
             </div>
           </div>
