@@ -1,6 +1,6 @@
 <?php
 // Booking Form Handler for Tides & Tidy
-// Handles POST requests from the booking form
+// Handles POST requests from booking form
 
 header('Content-Type: application/json');
 

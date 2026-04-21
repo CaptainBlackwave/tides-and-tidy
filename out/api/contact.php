@@ -1,6 +1,6 @@
 <?php
 // Contact Form Handler for Tides & Tidy
-// Handles POST requests from the contact form
+// Handles POST requests from contact form
 
 header('Content-Type: application/json');
 

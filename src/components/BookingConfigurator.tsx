@@ -148,20 +148,20 @@ export default function BookingConfigurator() {
   const currentTier = serviceTiers.find(t => t.id === selectedTier)!
 
   return (
-    <section id="book" className="relative py-28 md:py-36 border-t border-gray-200 dark:border-[#CFD2D4]/30 bg-gray-50 dark:bg-[#093457]">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#093457]/5 dark:via-[#00cccc]/10 to-transparent"></div>
+    <section id="book" className="relative py-28 md:py-36 border-t border-[#CFD2D4] bg-[#F8F9FA] dark:bg-[#093457]">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#093457]/3 to-transparent"></div>
       <div className="relative z-10 max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">
           <Sparkles className="w-12 h-12 text-[#00cccc] mx-auto mb-4" />
           <h2 className="font-extrabold text-3xl md:text-4xl text-[#093457] dark:text-white mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
             Get Your Free Quote
           </h2>
-          <p className="text-gray-600 dark:text-[#CFD2D4] text-base max-w-xl mx-auto">
+          <p className="text-[#093457]/70 dark:text-[#CFD2D4] text-base max-w-xl mx-auto">
             Choose your service and select how many hours you need. We provide instant estimates with no commitment required.
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-white to-gray-100 dark:from-[#0a1420] dark:to-[#093457]/90 backdrop-blur-md border border-gray-200 dark:border-[#CFD2D4]/50 rounded-2xl p-8 md:p-12 shadow-2xl">
+        <div className="bg-gradient-to-br from-[#FFFFFF] to-[#F8F9FA] dark:from-[#0A1630] dark:to-[#093457]/90 backdrop-blur-md border border-[#CFD2D4] dark:border-[#CFD2D4]/50 rounded-2xl p-8 md:p-12 shadow-2xl">
           
           {!showBookingForm ? (
             <div className="flex flex-col lg:flex-row gap-12">
@@ -181,7 +181,7 @@ export default function BookingConfigurator() {
                         w-full text-left p-5 rounded-xl border-2 transition-all duration-300
                         ${selectedTier === tier.id
                           ? 'border-[#00cccc] dark:border-[#00cccc] bg-[#00cccc]/5 dark:bg-[#00cccc]/10 shadow-lg'
-                          : 'border-gray-200 dark:border-[#CFD2D4]/30 hover:border-[#00cccc]/50 dark:hover:border-[#00cccc]/50 bg-gray-50 dark:bg-[#0a1420]/50'
+                          : 'border-[#CFD2D4] hover:border-[#00cccc]/50 bg-[#F8F9FA] dark:bg-[#0A1630]/50'
                         }
                       `}
                     >
@@ -193,17 +193,17 @@ export default function BookingConfigurator() {
                           <CheckCircle className="w-5 h-5 text-[#00cccc] flex-shrink-0 ml-2" />
                         )}
                       </div>
-                      <p className="text-gray-600 dark:text-[#CFD2D4] text-sm mb-3">{tier.description}</p>
+                      <p className="text-[#093457]/70 dark:text-[#CFD2D4] text-sm mb-3">{tier.description}</p>
                       <div className="flex items-center gap-2 mb-2">
                         <span className="text-xs font-semibold text-[#00cccc]">${tier.hourlyRate}/hr</span>
-                        <span className="text-xs text-gray-500">•</span>
-                        <span className="text-xs text-gray-500">{tier.minHours}-{tier.maxHours} hours</span>
+                        <span className="text-xs text-[#CFD2D4]">•</span>
+                        <span className="text-xs text-[#093457]/50 dark:text-[#CFD2D4]">{tier.minHours}-{tier.maxHours} hours</span>
                       </div>
                       <div className="flex flex-wrap gap-2">
                         {tier.features.slice(0, 2).map((feature) => (
                           <span
                             key={feature}
-                            className="text-xs text-gray-500 dark:text-gray-400 bg-gray-200 dark:bg-[#093457] px-2 py-1 rounded"
+                            className="text-xs text-[#093457]/50 dark:text-[#CFD2D4] bg-[#E9ECEF] dark:bg-[#093457] px-2 py-1 rounded"
                           >
                             {feature}
                           </span>
@@ -215,7 +215,7 @@ export default function BookingConfigurator() {
 
                 {/* Hours Slider */}
                 <div>
-                  <label className="text-sm font-medium text-gray-700 dark:text-gray-300 block mb-4">
+                  <label className="text-sm font-medium text-[#093457] dark:text-[#CFD2D4] block mb-4">
                     How many hours do you need?
                   </label>
                   <input
@@ -225,18 +225,18 @@ export default function BookingConfigurator() {
                     step={1}
                     value={hours}
                     onChange={(e) => setHours(Number(e.target.value))}
-                    className="w-full accent-[#00cccc] bg-gray-200 dark:bg-[#093457] h-2 rounded-lg appearance-none cursor-pointer"
+                    className="w-full accent-[#00cccc] bg-[#CFD2D4] dark:bg-[#CFD2D4]/30 h-2 rounded-lg appearance-none cursor-pointer"
                     style={{
                       WebkitAppearance: 'none',
-                      background: `linear-gradient(to right, #00cccc 0%, #00cccc ${((hours - currentTier.minHours) / (currentTier.maxHours - currentTier.minHours)) * 100}%, #d1d5db ${((hours - currentTier.minHours) / (currentTier.maxHours - currentTier.minHours)) * 100}%, #d1d5db 100%)`
+                      background: `linear-gradient(to right, #00cccc 0%, #00cccc ${((hours - currentTier.minHours) / (currentTier.maxHours - currentTier.minHours)) * 100}%, #CFD2D4 ${((hours - currentTier.minHours) / (currentTier.maxHours - currentTier.minHours)) * 100}%, #CFD2D4 100%)`
                     }}
                   />
                   <div className="flex justify-between mt-3">
-                    <span className="text-sm text-gray-500 dark:text-gray-400">{currentTier.minHours} hours</span>
+                    <span className="text-sm text-[#093457]/50 dark:text-[#CFD2D4]">{currentTier.minHours} hours</span>
                     <span className="text-lg font-bold text-[#00cccc]">{hours} hours</span>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">{currentTier.maxHours} hours</span>
+                    <span className="text-sm text-[#093457]/50 dark:text-[#CFD2D4]">{currentTier.maxHours} hours</span>
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                  <p className="text-xs text-[#093457]/50 dark:text-[#CFD2D4] mt-2">
                     Minimum {currentTier.minHours} hours required for {currentTier.name}
                   </p>
                 </div>
@@ -257,13 +257,13 @@ export default function BookingConfigurator() {
                             p-4 rounded-xl border-2 transition-all duration-300 text-left
                             ${consultationType === option.value
                               ? 'border-[#00cccc] dark:border-[#00cccc] bg-[#00cccc]/5 dark:bg-[#00cccc]/10'
-                              : 'border-gray-200 dark:border-[#CFD2D4]/30 hover:border-[#00cccc]/50 dark:hover:border-[#00cccc]/50 bg-gray-50 dark:bg-[#0a1420]/50'
+                              : 'border-[#CFD2D4] hover:border-[#00cccc]/50 bg-[#F8F9FA] dark:bg-[#0A1630]/50'
                             }
                           `}
                         >
-                          <Icon className={`w-5 h-5 mb-2 ${consultationType === option.value ? 'text-[#00cccc]' : 'text-gray-400'}`} />
+                          <Icon className={`w-5 h-5 mb-2 ${consultationType === option.value ? 'text-[#00cccc]' : 'text-[#CFD2D4]'}`} />
                           <p className="text-sm font-semibold text-[#093457] dark:text-white mb-1">{option.label}</p>
-                          <p className="text-xs text-gray-500 dark:text-gray-400">{option.description}</p>
+                          <p className="text-xs text-[#093457]/50 dark:text-[#CFD2D4]">{option.description}</p>
                         </button>
                       )
                     })}
@@ -273,13 +273,13 @@ export default function BookingConfigurator() {
 
               {/* Right Side - Quote Summary */}
               <div className="w-full lg:w-80 flex flex-col">
-                <div className="bg-gradient-to-br from-gray-100 to-gray-200 dark:from-[#0a1420]/80 dark:to-[#093457]/80 border border-gray-300 dark:border-[#CFD2D4]/50 rounded-xl p-6 flex-1">
+                <div className="bg-gradient-to-br from-[#F8F9FA] to-[#E9ECEF] dark:from-[#0A1630]/80 dark:to-[#093457]/80 border border-[#CFD2D4] dark:border-[#CFD2D4]/50 rounded-xl p-6 flex-1">
                   <h3 className="text-lg font-bold text-[#093457] dark:text-white mb-6" style={{ fontFamily: 'Poppins, sans-serif' }}>
                     Your Quote
                   </h3>
 
                   <div className="mb-6">
-                    <p className="text-sm text-gray-600 dark:text-[#CFD2D4] mb-2">Estimated Total</p>
+                    <p className="text-sm text-[#093457] dark:text-[#CFD2D4] mb-2">Estimated Total</p>
                     <div className="flex items-baseline gap-1">
                       <span className="text-5xl font-extrabold text-[#093457] dark:text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
                         ${estimatedPrice}
@@ -289,18 +289,18 @@ export default function BookingConfigurator() {
 
                   <div className="space-y-3 mb-6 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-600 dark:text-[#CFD2D4]">Service:</span>
+                      <span className="text-[#093457]/70 dark:text-[#CFD2D4]">Service:</span>
                       <span className="text-[#093457] dark:text-white font-medium">{currentTier.name}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600 dark:text-[#CFD2D4]">Hours:</span>
+                      <span className="text-[#093457]/70 dark:text-[#CFD2D4]">Hours:</span>
                       <span className="text-[#093457] dark:text-white font-medium">{hours} hours</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600 dark:text-[#CFD2D4]">Rate:</span>
+                      <span className="text-[#093457]/70 dark:text-[#CFD2D4]">Rate:</span>
                       <span className="text-[#093457] dark:text-white font-medium">${currentTier.hourlyRate}/hr</span>
                     </div>
-                    <div className="border-t border-gray-300 dark:border-[#CFD2D4] pt-3 flex justify-between">
+                    <div className="border-t border-[#CFD2D4] pt-3 flex justify-between">
                       <span className="text-[#093457] dark:text-white font-semibold">Total</span>
                       <span className="text-[#093457] dark:text-white font-bold">${estimatedPrice}</span>
                     </div>
@@ -312,7 +312,7 @@ export default function BookingConfigurator() {
                         <Clock className="w-5 h-5 text-[#00cccc]" />
                       </div>
                       <div>
-                        <p className="text-gray-600 dark:text-[#CFD2D4] text-xs">Booked Hours</p>
+                        <p className="text-[#093457]/70 dark:text-[#CFD2D4] text-xs">Booked Hours</p>
                         <p className="text-[#093457] dark:text-white font-medium">{hours} hours</p>
                       </div>
                     </div>
@@ -322,7 +322,7 @@ export default function BookingConfigurator() {
                         <Calendar className="w-5 h-5 text-[#00cccc]" />
                       </div>
                       <div>
-                        <p className="text-gray-600 dark:text-[#CFD2D4] text-xs">Next Available</p>
+                        <p className="text-[#093457]/70 dark:text-[#CFD2D4] text-xs">Next Available</p>
                         <p className="text-[#093457] dark:text-white font-medium">Tomorrow or sooner</p>
                       </div>
                     </div>
@@ -331,7 +331,7 @@ export default function BookingConfigurator() {
 
                 <button
                   onClick={() => setShowBookingForm(true)}
-                  className="w-full py-4 rounded-xl text-sm font-bold uppercase tracking-wide mt-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,204,204,0.3)] hover:-translate-y-0.5 flex items-center justify-center gap-2 bg-[#00cccc] dark:bg-[#00cccc] text-[#093457] dark:text-[#093457]"
+                  className="w-full py-4 rounded-xl text-sm font-bold uppercase tracking-wide mt-4 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,204,204,0.3)] hover:-translate-y-0.5 flex items-center justify-center gap-2 bg-[#00cccc] text-[#093457]"
                   style={{
                     boxShadow: '0 0 20px rgba(0, 204, 204, 0.15), 0 0 60px rgba(0, 204, 204, 0.05)'
                   }}
@@ -340,7 +340,7 @@ export default function BookingConfigurator() {
                   <CheckCircle className="w-4 h-4" />
                 </button>
 
-                <p className="text-gray-500 dark:text-gray-400 text-xs text-center mt-3">
+                <p className="text-[#093457]/50 dark:text-[#CFD2D4] text-xs text-center mt-3">
                   No commitment · Free quote · Satisfaction guaranteed
                 </p>
               </div>
@@ -362,7 +362,7 @@ export default function BookingConfigurator() {
               <form onSubmit={handleBooking} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-[#093457] dark:text-[#CFD2D4] mb-2">
                       Full Name *
                     </label>
                     <input
@@ -370,13 +370,13 @@ export default function BookingConfigurator() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-[#CFD2D4]/30 bg-white dark:bg-[#0a1420] text-[#093457] dark:text-white focus:ring-2 focus:ring-[#00cccc] focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-[#CFD2D4] dark:border-[#CFD2D4]/30 bg-[#FFFFFF] dark:bg-[#0A1630] text-[#093457] dark:text-white focus:ring-2 focus:ring-[#00cccc] focus:border-transparent transition-all"
                       placeholder="John Doe"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-[#093457] dark:text-[#CFD2D4] mb-2">
                       Email Address *
                     </label>
                     <input
@@ -384,13 +384,13 @@ export default function BookingConfigurator() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-[#CFD2D4]/30 bg-white dark:bg-[#0a1420] text-[#093457] dark:text-white focus:ring-2 focus:ring-[#00cccc] focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-[#CFD2D4] dark:border-[#CFD2D4]/30 bg-[#FFFFFF] dark:bg-[#0A1630] text-[#093457] dark:text-white focus:ring-2 focus:ring-[#00cccc] focus:border-transparent transition-all"
                       placeholder="john@example.com"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-[#093457] dark:text-[#CFD2D4] mb-2">
                       Phone Number *
                     </label>
                     <input
@@ -398,41 +398,41 @@ export default function BookingConfigurator() {
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-[#CFD2D4]/30 bg-white dark:bg-[#0a1420] text-[#093457] dark:text-white focus:ring-2 focus:ring-[#00cccc] focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-[#CFD2D4] dark:border-[#CFD2D4]/30 bg-[#FFFFFF] dark:bg-[#0A1630] text-[#093457] dark:text-white focus:ring-2 focus:ring-[#00cccc] focus:border-transparent transition-all"
                       placeholder="(555) 123-4567"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-[#093457] dark:text-[#CFD2D4] mb-2">
                       Address
                     </label>
                     <input
                       type="text"
                       value={formData.address}
                       onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-[#CFD2D4]/30 bg-white dark:bg-[#0a1420] text-[#093457] dark:text-white focus:ring-2 focus:ring-[#00cccc] focus:border-transparent transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-[#CFD2D4] dark:border-[#CFD2D4]/30 bg-[#FFFFFF] dark:bg-[#0A1630] text-[#093457] dark:text-white focus:ring-2 focus:ring-[#00cccc] focus:border-transparent transition-all"
                       placeholder="123 Main St, Halifax"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  <label className="block text-sm font-medium text-[#093457] dark:text-[#CFD2D4] mb-2">
                     Additional Notes
                   </label>
                   <textarea
                     rows={4}
                     value={formData.notes}
                     onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-[#CFD2D4]/30 bg-white dark:bg-[#0a1420] text-[#093457] dark:text-white focus:ring-2 focus:ring-[#00cccc] focus:border-transparent transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-[#CFD2D4] dark:border-[#CFD2D4]/30 bg-[#FFFFFF] dark:bg-[#0A1630] text-[#093457] dark:text-white focus:ring-2 focus:ring-[#00cccc] focus:border-transparent transition-all resize-none"
                     placeholder="Any specific requirements or areas of focus..."
                   />
                 </div>
 
-                <div className="bg-gray-50 dark:bg-[#0a1420]/50 rounded-lg p-4 border border-gray-200 dark:border-[#CFD2D4]/30">
+                <div className="bg-[#F8F9FA] dark:bg-[#0A1630]/50 rounded-lg p-4 border border-[#CFD2D4] dark:border-[#CFD2D4]/30">
                   <p className="text-sm font-semibold text-[#093457] dark:text-white mb-2">Booking Summary</p>
-                  <div className="space-y-1 text-sm text-gray-600 dark:text-[#CFD2D4]">
+                  <div className="space-y-1 text-sm text-[#093457]/70 dark:text-[#CFD2D4]">
                     <p>• Service: {currentTier.name}</p>
                     <p>• Hours: {hours} hours</p>
                     <p>• Consultation: {consultationOptions.find(c => c.value === consultationType)?.label}</p>
@@ -443,7 +443,7 @@ export default function BookingConfigurator() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 rounded-xl text-sm font-bold uppercase tracking-wide transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0_0_30px_rgba(0,204,204,0.3)] hover:-translate-y-0.5 flex items-center justify-center gap-2 bg-[#00cccc] dark:bg-[#00cccc] text-[#093457] dark:text-[#093457]"
+                  className="w-full py-4 rounded-xl text-sm font-bold uppercase tracking-wide transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0_0_30px_rgba(0,204,204,0.3)] hover:-translate-y-0.5 flex items-center justify-center gap-2 bg-[#00cccc] text-[#093457]"
                   style={{
                     boxShadow: '0 0 20px rgba(0, 204, 204, 0.15), 0 0 60px rgba(0, 204, 204, 0.05)'
                   }}

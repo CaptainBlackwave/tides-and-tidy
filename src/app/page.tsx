@@ -46,7 +46,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-[#093457] text-gray-900 dark:text-[#eef0f2]" style={{ fontFamily: 'Open Sans, sans-serif' }}>
+    <div className="min-h-screen flex flex-col bg-[#FFFFFF] dark:bg-[#093457]" style={{ fontFamily: 'Open Sans, sans-serif' }}>
       {/* Film grain overlay - dark mode only */}
       <div className="dark:fixed dark:inset-0 pointer-events-none z-[9999] dark:opacity-40" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E")`
@@ -54,19 +54,19 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 border-b ${
-        isScrolled ? 'bg-[rgba(9,52,87,0.95)] dark:bg-[rgba(9,52,87,0.95)] bg-white/95 backdrop-blur-xl border-[#CFD2D4] dark:border-[#CFD2D4] border-gray-200' : 'border-transparent'
+        isScrolled ? 'bg-[rgba(255,255,255,0.98)] dark:bg-[rgba(9,52,87,0.98)] backdrop-blur-xl border-[#CFD2D4]' : 'border-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-          <a href="#" className="font-heading font-extrabold text-base tracking-[0.15em] uppercase text-gray-900 dark:text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
+          <a href="#" className="font-heading font-extrabold text-base tracking-[0.15em] uppercase text-[#093457] dark:text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
             TIDES <span className="text-[#00cccc]">&</span> TIDY
           </a>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#services" className="text-sm text-gray-600 dark:text-gray-300 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors duration-200 tracking-wide">Services</a>
-            <a href="#specialists" className="text-sm text-gray-600 dark:text-gray-300 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors duration-200 tracking-wide">Specialists</a>
-            <a href="#transformations" className="text-sm text-gray-600 dark:text-gray-300 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors duration-200 tracking-wide">Transformations</a>
-            <a href="#contact" className="text-sm text-gray-600 dark:text-gray-300 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors duration-200 tracking-wide">Contact</a>
+            <a href="#services" className="text-sm text-[#093457] dark:text-[#CFD2D4] hover:text-[#00cccc] transition-colors duration-200 tracking-wide font-medium">Services</a>
+            <a href="#specialists" className="text-sm text-[#093457] dark:text-[#CFD2D4] hover:text-[#00cccc] transition-colors duration-200 tracking-wide font-medium">Specialists</a>
+            <a href="#transformations" className="text-sm text-[#093457] dark:text-[#CFD2D4] hover:text-[#00cccc] transition-colors duration-200 tracking-wide font-medium">Transformations</a>
+            <a href="#contact" className="text-sm text-[#093457] dark:text-[#CFD2D4] hover:text-[#00cccc] transition-colors duration-200 tracking-wide font-medium">Contact</a>
             <ThemeToggle />
-            <a href="#book" className="px-5 py-2 rounded-md text-xs uppercase tracking-wider font-bold transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,204,204,0.3)] hover:-translate-y-0.5 bg-[#00cccc] dark:bg-[#00cccc] text-[#093457] dark:text-[#093457]" style={{
+            <a href="#book" className="px-5 py-2 rounded-md text-xs uppercase tracking-wider font-bold transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,204,204,0.3)] hover:-translate-y-0.5 bg-[#00cccc] text-[#093457]" style={{
               boxShadow: '0 0 20px rgba(0, 204, 204, 0.15), 0 0 60px rgba(0, 204, 204, 0.05)'
             }}>
               Book Now
@@ -74,7 +74,7 @@ export default function Home() {
           </div>
           <div className="md:hidden flex items-center gap-2">
             <ThemeToggle />
-            <button onClick={() => setIsMenuOpen(true)} className="text-gray-900 dark:text-white p-2" aria-label="Menu">
+            <button onClick={() => setIsMenuOpen(true)} className="text-[#093457] dark:text-white p-2" aria-label="Menu">
               <Menu className="w-5.5 h-5.5" />
             </button>
           </div>
@@ -82,15 +82,15 @@ export default function Home() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-y-0 right-0 w-72 bg-gray-100/98 dark:bg-[#093457]/98 backdrop-blur-xl z-[1100] border-l border-gray-200 dark:border-[#CFD2D4]/50 flex flex-col p-8 pt-20 transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <button onClick={() => setIsMenuOpen(false)} className="absolute top-5 right-5 text-gray-600 dark:text-gray-300 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors">
+      <div className={`fixed inset-y-0 right-0 w-72 bg-[#FFFFFF]/98 dark:bg-[#093457]/98 backdrop-blur-xl z-[1100] border-l border-[#CFD2D4] flex flex-col p-8 pt-20 transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <button onClick={() => setIsMenuOpen(false)} className="absolute top-5 right-5 text-[#093457] dark:text-white hover:text-[#00cccc] transition-colors">
           <X className="w-5.5 h-5.5" />
         </button>
-        <a href="#services" onClick={() => scrollToSection('services')} className="text-lg font-bold text-gray-700 dark:text-gray-200 hover:text-[#00cccc] dark:hover:text-[#00cccc] py-3 border-b border-gray-200 dark:border-[#CFD2D4]/40 transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>Services</a>
-        <a href="#specialists" onClick={() => scrollToSection('specialists')} className="text-lg font-bold text-gray-700 dark:text-gray-200 hover:text-[#00cccc] dark:hover:text-[#00cccc] py-3 border-b border-gray-200 dark:border-[#CFD2D4]/40 transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>Specialists</a>
-        <a href="#transformations" onClick={() => scrollToSection('transformations')} className="text-lg font-bold text-gray-700 dark:text-gray-200 hover:text-[#00cccc] dark:hover:text-[#00cccc] py-3 border-b border-gray-200 dark:border-[#CFD2D4]/40 transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>Transformations</a>
-        <a href="#contact" onClick={() => scrollToSection('contact')} className="text-lg font-bold text-gray-700 dark:text-gray-200 hover:text-[#00cccc] dark:hover:text-[#00cccc] py-3 border-b border-gray-200 dark:border-[#CFD2D4]/40 transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>Contact</a>
-        <a href="#book" onClick={() => scrollToSection('book')} className="mt-8 py-3 rounded-md text-center text-sm uppercase tracking-wider font-bold transition-all duration-300 bg-[#00cccc] dark:bg-[#00cccc] text-[#093457] dark:text-[#093457]">
+        <a href="#services" onClick={() => scrollToSection('services')} className="text-lg font-bold text-[#093457] dark:text-white hover:text-[#00cccc] py-3 border-b border-[#CFD2D4] transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>Services</a>
+        <a href="#specialists" onClick={() => scrollToSection('specialists')} className="text-lg font-bold text-[#093457] dark:text-white hover:text-[#00cccc] py-3 border-b border-[#CFD2D4] transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>Specialists</a>
+        <a href="#transformations" onClick={() => scrollToSection('transformations')} className="text-lg font-bold text-[#093457] dark:text-white hover:text-[#00cccc] py-3 border-b border-[#CFD2D4] transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>Transformations</a>
+        <a href="#contact" onClick={() => scrollToSection('contact')} className="text-lg font-bold text-[#093457] dark:text-white hover:text-[#00cccc] py-3 border-b border-[#CFD2D4] transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>Contact</a>
+        <a href="#book" onClick={() => scrollToSection('book')} className="mt-8 py-3 rounded-md text-center text-sm uppercase tracking-wider font-bold transition-all duration-300 bg-[#00cccc] text-[#093457]">
           Book Now
         </a>
       </div>
@@ -131,13 +131,13 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="relative py-24 md:py-32 bg-white dark:bg-[#093457]">
+      <section id="services" className="relative py-24 md:py-32 bg-[#FFFFFF] dark:bg-[#093457]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-16 text-center reveal">
             <div className="w-16 h-1 bg-gradient-to-r from-[#00cccc] to-transparent mx-auto mb-5"></div>
-            <p className="text-sm font-semibold text-[#00cccc] dark:text-[#00cccc] mb-3 uppercase tracking-wider" style={{ fontFamily: 'Poppins, sans-serif' }}>Our Services</p>
+            <p className="text-sm font-semibold text-[#00cccc] mb-3 uppercase tracking-wider" style={{ fontFamily: 'Poppins, sans-serif' }}>Our Services</p>
             <h2 className="font-extrabold text-3xl md:text-4xl text-[#093457] dark:text-white mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>Cleaning Packages for Every Need</h2>
-            <p className="text-gray-600 dark:text-[#CFD2D4] text-base max-w-2xl mx-auto leading-relaxed">Whether you need regular maintenance, a deep clean, or help with a move, we have the perfect solution for your home.</p>
+            <p className="text-[#CFD2D4] dark:text-[#CFD2D4] text-base max-w-2xl mx-auto leading-relaxed">Whether you need regular maintenance, a deep clean, or help with a move, we have perfect solution for your home.</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -171,18 +171,18 @@ export default function Home() {
                 tags: ['Overnight', 'Backshift', 'Quiet Service', 'Flexible']
               }
             ].map((service, index) => (
-              <div key={service.id} className="rounded-xl overflow-hidden bg-gray-50 dark:bg-[#0a1420] border border-gray-200 dark:border-[#CFD2D4]/30 transition-all duration-400 hover:border-[rgba(0,204,204,0.25)] hover:shadow-[0_0_40px_rgba(0,204,204,0.05)] reveal" style={{ transitionDelay: `${index * 0.1}s` }}>
+              <div key={service.id} className="rounded-xl overflow-hidden bg-[#F8F9FA] dark:bg-[#0A1630] border border-[#CFD2D4] dark:border-[#CFD2D4]/30 transition-all duration-400 hover:border-[rgba(0,204,204,0.5)] hover:shadow-[0_0_40px_rgba(0,204,204,0.1)] reveal" style={{ transitionDelay: `${index * 0.1}s` }}>
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <img src={service.image} alt={service.title} className="service-img w-full h-full object-cover grayscale contrast-[1.15] transition-transform duration-700 ease-out hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1420] via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1630] via-transparent to-transparent"></div>
                   <span className="absolute bottom-4 left-5 text-[10px] font-bold tracking-[0.2em] uppercase text-[#00cccc]" style={{ fontFamily: 'Poppins, sans-serif' }}>0{service.id}</span>
                 </div>
                 <div className="p-6">
                   <h3 className="font-bold text-xl tracking-tight text-[#093457] dark:text-white mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>{service.title}</h3>
-                  <p className="text-gray-600 dark:text-[#CFD2D4] text-sm leading-relaxed mb-5 font-light">{service.description}</p>
+                  <p className="text-[#093457]/70 dark:text-[#CFD2D4] text-sm leading-relaxed mb-5 font-light">{service.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {service.tags.map((tag) => (
-                      <span key={tag} className="bg-[rgba(0,204,204,0.06)] border border-[rgba(0,204,204,0.12)] text-[#00cccc] text-[11px] font-medium tracking-wider uppercase px-2.5 py-1 rounded">
+                      <span key={tag} className="bg-[rgba(0,204,204,0.08)] dark:bg-[rgba(0,204,204,0.12)] border border-[rgba(0,204,204,0.15)] text-[#00cccc] text-[11px] font-medium tracking-wider uppercase px-2.5 py-1 rounded">
                         {tag}
                       </span>
                     ))}
@@ -198,13 +198,13 @@ export default function Home() {
       <SpecialistSelector />
 
       {/* Transformations Section */}
-      <section id="transformations" className="relative py-24 md:py-32 border-t border-[#CFD2D4]/30 bg-gray-50 dark:bg-[#093457]">
+      <section id="transformations" className="relative py-24 md:py-32 border-t border-[#CFD2D4]/30 bg-[#F8F9FA] dark:bg-[#093457]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-16 text-center reveal">
             <div className="w-16 h-1 bg-gradient-to-r from-[#00cccc] to-transparent mx-auto mb-5"></div>
-            <p className="text-sm font-semibold text-[#00cccc] dark:text-[#00cccc] mb-3 uppercase tracking-wider" style={{ fontFamily: 'Poppins, sans-serif' }}>Before & After</p>
+            <p className="text-sm font-semibold text-[#00cccc] mb-3 uppercase tracking-wider" style={{ fontFamily: 'Poppins, sans-serif' }}>Before & After</p>
             <h2 className="font-extrabold text-3xl md:text-4xl text-[#093457] dark:text-white mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>See the Difference We Make</h2>
-            <p className="text-gray-600 dark:text-[#CFD2D4] text-base max-w-2xl mx-auto leading-relaxed">Drag the slider to compare before and after. Real results from real homes like yours.</p>
+            <p className="text-[#CFD2D4] dark:text-[#CFD2D4] text-base max-w-2xl mx-auto leading-relaxed">Drag the slider to compare before and after. Real results from real homes like yours.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -242,44 +242,44 @@ export default function Home() {
       <ContactForm />
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 dark:border-[#CFD2D4]/30 pt-12 pb-8 mt-auto bg-white dark:bg-[#093457]">
+      <footer className="border-t border-[#CFD2D4] pt-12 pb-8 mt-auto bg-[#FFFFFF] dark:bg-[#093457]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
               <span className="font-extrabold text-sm tracking-[0.15em] uppercase text-[#093457] dark:text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 TIDES <span className="text-[#00cccc]">&</span> TIDY
               </span>
-              <p className="text-gray-600 dark:text-[#CFD2D4] text-xs mt-1">Precision cleaning. Absolute peace of mind.</p>
+              <p className="text-[#CFD2D4] dark:text-[#CFD2D4] text-xs mt-1">Precision cleaning. Absolute peace of mind.</p>
             </div>
-            <div className="flex items-center gap-6 text-xs text-gray-500 dark:text-gray-400">
-              <a href="tel:+18005551234" className="hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors flex items-center gap-1.5">
+            <div className="flex items-center gap-6 text-xs text-[#093457]/70 dark:text-[#CFD2D4]">
+              <a href="tel:+18005551234" className="hover:text-[#00cccc] transition-colors flex items-center gap-1.5">
                 <Phone className="w-3.5 h-3.5" />
                 (800) 555-1234
               </a>
-              <a href="mailto:hello@tidesandtidy.com" className="hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors flex items-center gap-1.5">
+              <a href="mailto:hello@tidesandtidy.com" className="hover:text-[#00cccc] transition-colors flex items-center gap-1.5">
                 <Mail className="w-3.5 h-3.5" />
                 hello@tidesandtidy.com
               </a>
             </div>
             <div className="flex items-center gap-4">
-              <a href="#" className="text-gray-400 dark:text-gray-400 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors" aria-label="Instagram">
+              <a href="#" className="text-[#CFD2D4] hover:text-[#00cccc] transition-colors" aria-label="Instagram">
                 <Instagram className="w-4.5 h-4.5" />
               </a>
-              <a href="#" className="text-gray-400 dark:text-gray-400 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors" aria-label="LinkedIn">
+              <a href="#" className="text-[#CFD2D4] hover:text-[#00cccc] transition-colors" aria-label="LinkedIn">
                 <Linkedin className="w-4.5 h-4.5" />
               </a>
-              <a href="#" className="text-gray-400 dark:text-gray-400 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors" aria-label="Twitter">
+              <a href="#" className="text-[#CFD2D4] hover:text-[#00cccc] transition-colors" aria-label="Twitter">
                 <Twitter className="w-4.5 h-4.5" />
               </a>
             </div>
           </div>
-          <div className="mt-8 pt-6 border-t border-gray-200 dark:border-[#CFD2D4]/20 text-center">
-            <p className="text-gray-700 dark:text-gray-500 text-[11px] tracking-wide">&copy; 2025 Tides & Tidy. All rights reserved.</p>
+          <div className="mt-8 pt-6 border-t border-[#CFD2D4]/50 text-center">
+            <p className="text-[#093457] dark:text-[#CFD2D4] text-[11px] tracking-wide">&copy; 2025 Tides & Tidy. All rights reserved.</p>
           </div>
           
           {/* Atlantic East Coast Vibe - Tides Tech Attribution */}
           <div className="mt-8 relative overflow-hidden rounded-xl">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#00cccc]/15 via-[#00cccc]/25 to-[#00cccc]/15 dark:from-[#00cccc]/10 dark:via-[#00cccc]/20 dark:to-[#00cccc]/10"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#00cccc]/15 via-[#00cccc]/25 to-[#00cccc]/15"></div>
             
             <div className="relative flex items-center justify-center gap-4 py-6">
               {/* Wave animation - left side */}
@@ -291,7 +291,7 @@ export default function Home() {
                 <span className="w-2 h-6 bg-[#00cccc]/70 rounded-full animate-wave" style={{ animationDelay: '0.4s' }}></span>
               </div>
               
-              <span className="text-[#093457] dark:text-[#eef0f2] text-lg md:text-xl font-semibold tracking-wide flex items-center gap-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+              <span className="text-[#093457] dark:text-white text-lg md:text-xl font-semibold tracking-wide flex items-center gap-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 Made By <span className="font-extrabold text-[#00cccc]">Tides Tech</span> With <span className="animate-pulse text-2xl">❤️</span> <span className="inline-block text-3xl animate-bounce">🌊</span>
               </span>
               
@@ -385,10 +385,10 @@ function BeforeAfterSlider({ beforeImage, afterImage, clientName, serviceTier, q
             <ChevronRight className="w-4 h-4 text-[#093457]" />
           </div>
         </div>
-        <span className="absolute top-4 left-4 z-20 text-[10px] font-bold tracking-[0.2em] uppercase bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded text-gray-300" style={{ fontFamily: 'Poppins, sans-serif' }}>
+        <span className="absolute top-4 left-4 z-20 text-[10px] font-bold tracking-[0.2em] uppercase bg-[#093457]/70 dark:bg-[#093457]/70 backdrop-blur-sm px-2.5 py-1 rounded text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
           Before
         </span>
-        <span className="absolute top-4 right-4 z-20 text-[10px] font-bold tracking-[0.2em] uppercase bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded text-[#00cccc]" style={{ fontFamily: 'Poppins, sans-serif' }}>
+        <span className="absolute top-4 right-4 z-20 text-[10px] font-bold tracking-[0.2em] uppercase bg-[#093457]/70 dark:bg-[#093457]/70 backdrop-blur-sm px-2.5 py-1 rounded text-[#00cccc]" style={{ fontFamily: 'Poppins, sans-serif' }}>
           After
         </span>
         <div
@@ -398,10 +398,10 @@ function BeforeAfterSlider({ beforeImage, afterImage, clientName, serviceTier, q
         />
       </div>
       <div className="mt-5 pl-1">
-        <p className="text-gray-700 dark:text-[#eef0f2] text-sm leading-relaxed italic font-light">
+        <p className="text-[#093457] dark:text-white text-sm leading-relaxed italic font-light">
           "{quote}"
         </p>
-        <p className="text-gray-500 dark:text-gray-400 text-xs mt-2 font-medium tracking-wide">— {clientName}, {serviceTier}</p>
+        <p className="text-[#CFD2D4] dark:text-[#CFD2D4] text-xs mt-2 font-medium tracking-wide">— {clientName}, {serviceTier}</p>
       </div>
     </div>
   )
