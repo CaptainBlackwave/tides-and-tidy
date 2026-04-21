@@ -1,0 +1,11 @@
+# API Directory .htaccess
+# Ensure PHP files can be executed
+
+<FilesMatch "\.php$">
+    SetHandler application/x-httpd-php
+</FilesMatch>
+
+# Optional: Add security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
