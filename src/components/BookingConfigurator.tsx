@@ -148,7 +148,7 @@ export default function BookingConfigurator() {
   const currentTier = serviceTiers.find(t => t.id === selectedTier)!
 
   return (
-    <section id="book" className="relative py-28 md:py-36 border-t border-[#CFD2D4] bg-[#F8F9FA] dark:bg-[#093457]">
+    <section id="book" className="relative py-28 md:py-36 border-t border-[#CFD2D4] bg-[#F8F9FA] dark:bg-[#0A1F33]">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#093457]/3 to-transparent"></div>
       <div className="relative z-10 max-w-4xl mx-auto px-6">
         <div className="text-center mb-12">

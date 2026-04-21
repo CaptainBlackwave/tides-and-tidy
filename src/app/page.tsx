@@ -46,7 +46,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FFFFFF] dark:bg-[#093457]" style={{ fontFamily: 'Open Sans, sans-serif' }}>
+    <div className="min-h-screen flex flex-col bg-[#FFFFFF] dark:bg-[#0A1F33]" style={{ fontFamily: 'Open Sans, sans-serif' }}>
       {/* Film grain overlay - dark mode only */}
       <div className="dark:fixed dark:inset-0 pointer-events-none z-[9999] dark:opacity-40" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E")`
@@ -54,7 +54,7 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 border-b ${
-        isScrolled ? 'bg-[rgba(255,255,255,0.98)] dark:bg-[rgba(9,52,87,0.98)] backdrop-blur-xl border-[#CFD2D4]' : 'border-transparent'
+        isScrolled ? 'bg-[rgba(255,255,255,0.98)] dark:bg-[rgba(10,31,51,0.98)] backdrop-blur-xl border-[#CFD2D4]' : 'border-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
           <a href="#" className="font-heading font-extrabold text-base tracking-[0.15em] uppercase text-[#093457] dark:text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
@@ -82,7 +82,7 @@ export default function Home() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-y-0 right-0 w-72 bg-[#FFFFFF]/98 dark:bg-[#093457]/98 backdrop-blur-xl z-[1100] border-l border-[#CFD2D4] flex flex-col p-8 pt-20 transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed inset-y-0 right-0 w-72 bg-[#FFFFFF]/98 dark:bg-[#0A1F33]/98 backdrop-blur-xl z-[1100] border-l border-[#CFD2D4] flex flex-col p-8 pt-20 transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <button onClick={() => setIsMenuOpen(false)} className="absolute top-5 right-5 text-[#093457] dark:text-white hover:text-[#00cccc] transition-colors">
           <X className="w-5.5 h-5.5" />
         </button>
@@ -131,7 +131,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="relative py-24 md:py-32 bg-[#FFFFFF] dark:bg-[#093457]">
+      <section id="services" className="relative py-24 md:py-32 bg-[#FFFFFF] dark:bg-[#0A1F33]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-16 text-center reveal">
             <div className="w-16 h-1 bg-gradient-to-r from-[#00cccc] to-transparent mx-auto mb-5"></div>
@@ -198,7 +198,7 @@ export default function Home() {
       <SpecialistSelector />
 
       {/* Transformations Section */}
-      <section id="transformations" className="relative py-24 md:py-32 border-t border-[#CFD2D4]/30 bg-[#F8F9FA] dark:bg-[#093457]">
+      <section id="transformations" className="relative py-24 md:py-32 border-t border-[#CFD2D4]/30 bg-[#F8F9FA] dark:bg-[#0A1F33]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-16 text-center reveal">
             <div className="w-16 h-1 bg-gradient-to-r from-[#00cccc] to-transparent mx-auto mb-5"></div>
@@ -242,7 +242,7 @@ export default function Home() {
       <ContactForm />
 
       {/* Footer */}
-      <footer className="border-t border-[#CFD2D4] pt-12 pb-8 mt-auto bg-[#FFFFFF] dark:bg-[#093457]">
+      <footer className="border-t border-[#CFD2D4] pt-12 pb-8 mt-auto bg-[#FFFFFF] dark:bg-[#0A1F33]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">

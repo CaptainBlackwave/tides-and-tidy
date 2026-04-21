@@ -1,17 +1,13 @@
 <?php
 // Booking Form Handler for Tides & Tidy
-// Handles POST requests from booking form
-
 header('Content-Type: application/json');
 
-// Only allow POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['success' => false, 'message' => 'Method not allowed']);
     exit;
 }
 
-// Sanitize and validate input
 $name = htmlspecialchars(trim($_POST['name'] ?? ''));
 $email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
 $phone = htmlspecialchars(trim($_POST['phone'] ?? ''));
@@ -22,7 +18,6 @@ $bathrooms = intval($_POST['bathrooms'] ?? 0);
 $consultationType = htmlspecialchars(trim($_POST['consultationType'] ?? ''));
 $notes = htmlspecialchars(trim($_POST['notes'] ?? ''));
 
-// Basic validation
 if (empty($name) || empty($email) || empty($phone) || empty($service) || empty($consultationType)) {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'All required fields must be filled']);
@@ -35,14 +30,11 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-// Email configuration
 $to = 'your-email@example.com'; // UPDATE THIS WITH YOUR EMAIL
 $from = 'noreply@tidesandtidy.com';
 
-// Create email subject
 $email_subject = "New Booking Request: $service - $name";
 
-// Create email body
 $email_body = "NEW BOOKING REQUEST
 
 Client Information:
@@ -59,14 +51,12 @@ Additional Notes:
 $notes
 
 ";
-// Email headers
+
 $headers = "From: $from\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
-// Send email
 if (mail($to, $email_subject, $email_body, $headers)) {
-    // Log submission
     $log_entry = date('Y-m-d H:i:s') . " - Booking Request - $name - $email - $service\n";
     file_put_contents(__DIR__ . '/submissions.log', $log_entry, FILE_APPEND);
 

@@ -52,7 +52,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="relative py-24 md:py-32 border-t border-[#CFD2D4] bg-[#F8F9FA] dark:bg-[#093457]">
+    <section id="contact" className="relative py-24 md:py-32 border-t border-[#CFD2D4] bg-[#F8F9FA] dark:bg-[#0A1F33]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left Side - Contact Info */}
