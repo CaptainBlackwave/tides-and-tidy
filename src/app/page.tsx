@@ -46,7 +46,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-[#0c1017] text-gray-900 dark:text-[#eef0f2]" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <div className="min-h-screen flex flex-col bg-white dark:bg-[#093457] text-gray-900 dark:text-[#eef0f2]" style={{ fontFamily: 'Open Sans, sans-serif' }}>
       {/* Film grain overlay - dark mode only */}
       <div className="dark:fixed dark:inset-0 pointer-events-none z-[9999] dark:opacity-40" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E")`
@@ -54,20 +54,20 @@ export default function Home() {
 
       {/* Navigation */}
       <nav className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 border-b ${
-        isScrolled ? 'bg-[rgba(12,16,23,0.95)] dark:bg-[rgba(12,16,23,0.95)] bg-white/95 backdrop-blur-xl border-[#222830] dark:border-[#222830] border-gray-200' : 'border-transparent'
+        isScrolled ? 'bg-[rgba(9,52,87,0.95)] dark:bg-[rgba(9,52,87,0.95)] bg-white/95 backdrop-blur-xl border-[#CFD2D4] dark:border-[#CFD2D4] border-gray-200' : 'border-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
-          <a href="#" className="font-heading font-extrabold text-base tracking-[0.15em] uppercase text-gray-900 dark:text-white" style={{ fontFamily: 'Archivo, sans-serif' }}>
-            TIDES <span className="text-teal-600 dark:text-teal-400">&</span> TIDY
+          <a href="#" className="font-heading font-extrabold text-base tracking-[0.15em] uppercase text-gray-900 dark:text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            TIDES <span className="text-[#00cccc]">&</span> TIDY
           </a>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#services" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 tracking-wide">Services</a>
-            <a href="#specialists" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 tracking-wide">Specialists</a>
-            <a href="#transformations" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 tracking-wide">Transformations</a>
-            <a href="#contact" className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 tracking-wide">Contact</a>
+            <a href="#services" className="text-sm text-gray-600 dark:text-gray-300 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors duration-200 tracking-wide">Services</a>
+            <a href="#specialists" className="text-sm text-gray-600 dark:text-gray-300 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors duration-200 tracking-wide">Specialists</a>
+            <a href="#transformations" className="text-sm text-gray-600 dark:text-gray-300 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors duration-200 tracking-wide">Transformations</a>
+            <a href="#contact" className="text-sm text-gray-600 dark:text-gray-300 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors duration-200 tracking-wide">Contact</a>
             <ThemeToggle />
-            <a href="#book" className="px-5 py-2 rounded-md text-xs uppercase tracking-wider font-bold transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,199,0.3)] hover:-translate-y-0.5 bg-teal-600 dark:bg-[#00e5c7] text-white dark:text-[#0c1017]" style={{
-              boxShadow: '0 0 20px rgba(0, 229, 199, 0.15), 0 0 60px rgba(0, 229, 199, 0.05)'
+            <a href="#book" className="px-5 py-2 rounded-md text-xs uppercase tracking-wider font-bold transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,204,204,0.3)] hover:-translate-y-0.5 bg-[#00cccc] dark:bg-[#00cccc] text-[#093457] dark:text-[#093457]" style={{
+              boxShadow: '0 0 20px rgba(0, 204, 204, 0.15), 0 0 60px rgba(0, 204, 204, 0.05)'
             }}>
               Book Now
             </a>
@@ -82,15 +82,15 @@ export default function Home() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-y-0 right-0 w-72 bg-gray-100/98 dark:bg-[#131820]/98 backdrop-blur-xl z-[1100] border-l border-gray-200 dark:border-slate-700/50 flex flex-col p-8 pt-20 transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <button onClick={() => setIsMenuOpen(false)} className="absolute top-5 right-5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+      <div className={`fixed inset-y-0 right-0 w-72 bg-gray-100/98 dark:bg-[#093457]/98 backdrop-blur-xl z-[1100] border-l border-gray-200 dark:border-[#CFD2D4]/50 flex flex-col p-8 pt-20 transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <button onClick={() => setIsMenuOpen(false)} className="absolute top-5 right-5 text-gray-600 dark:text-gray-300 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors">
           <X className="w-5.5 h-5.5" />
         </button>
-        <a href="#services" onClick={() => scrollToSection('services')} className="text-lg font-bold text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 py-3 border-b border-gray-200 dark:border-slate-700/40 transition-colors" style={{ fontFamily: 'Archivo, sans-serif' }}>Services</a>
-        <a href="#specialists" onClick={() => scrollToSection('specialists')} className="text-lg font-bold text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 py-3 border-b border-gray-200 dark:border-slate-700/40 transition-colors" style={{ fontFamily: 'Archivo, sans-serif' }}>Specialists</a>
-        <a href="#transformations" onClick={() => scrollToSection('transformations')} className="text-lg font-bold text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 py-3 border-b border-gray-200 dark:border-slate-700/40 transition-colors" style={{ fontFamily: 'Archivo, sans-serif' }}>Transformations</a>
-        <a href="#contact" onClick={() => scrollToSection('contact')} className="text-lg font-bold text-gray-700 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 py-3 border-b border-gray-200 dark:border-slate-700/40 transition-colors" style={{ fontFamily: 'Archivo, sans-serif' }}>Contact</a>
-        <a href="#book" onClick={() => scrollToSection('book')} className="mt-8 py-3 rounded-md text-center text-sm uppercase tracking-wider font-bold transition-all duration-300 bg-teal-600 dark:bg-[#00e5c7] text-white dark:text-[#0c1017]">
+        <a href="#services" onClick={() => scrollToSection('services')} className="text-lg font-bold text-gray-700 dark:text-gray-200 hover:text-[#00cccc] dark:hover:text-[#00cccc] py-3 border-b border-gray-200 dark:border-[#CFD2D4]/40 transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>Services</a>
+        <a href="#specialists" onClick={() => scrollToSection('specialists')} className="text-lg font-bold text-gray-700 dark:text-gray-200 hover:text-[#00cccc] dark:hover:text-[#00cccc] py-3 border-b border-gray-200 dark:border-[#CFD2D4]/40 transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>Specialists</a>
+        <a href="#transformations" onClick={() => scrollToSection('transformations')} className="text-lg font-bold text-gray-700 dark:text-gray-200 hover:text-[#00cccc] dark:hover:text-[#00cccc] py-3 border-b border-gray-200 dark:border-[#CFD2D4]/40 transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>Transformations</a>
+        <a href="#contact" onClick={() => scrollToSection('contact')} className="text-lg font-bold text-gray-700 dark:text-gray-200 hover:text-[#00cccc] dark:hover:text-[#00cccc] py-3 border-b border-gray-200 dark:border-[#CFD2D4]/40 transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>Contact</a>
+        <a href="#book" onClick={() => scrollToSection('book')} className="mt-8 py-3 rounded-md text-center text-sm uppercase tracking-wider font-bold transition-all duration-300 bg-[#00cccc] dark:bg-[#00cccc] text-[#093457] dark:text-[#093457]">
           Book Now
         </a>
       </div>
@@ -100,47 +100,47 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src="https://picsum.photos/seed/pristinesurface/1920/1080" alt="" className="hero-bg w-full h-full object-cover grayscale contrast-[1.15]" style={{ animation: 'kenBurns 20s ease-in-out infinite' }} />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0c1017]/80 via-[#0c1017]/50 to-[#0c1017] dark:from-[#0c1017]/80 dark:via-[#0c1017]/50 dark:to-[#0c1017] from-gray-900/70 via-gray-900/40 to-gray-900"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0c1017]/60 via-transparent to-[#0c1017]/60 dark:from-[#0c1017]/60 dark:via-transparent dark:to-[#0c1017]/60 from-gray-900/50 via-transparent to-gray-900/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#093457]/90 via-[#093457]/70 to-[#093457] dark:from-[#093457]/90 dark:via-[#093457]/70 dark:to-[#093457] from-gray-900/70 via-gray-900/40 to-gray-900"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#093457]/70 via-transparent to-[#093457]/70 dark:from-[#093457]/70 dark:via-transparent dark:to-[#093457]/70 from-gray-900/50 via-transparent to-gray-900/50"></div>
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
           <div className={`reveal transition-all duration-900 ease-out ${visibleElements.has('hero-1') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-1">
-            <span className="inline-block text-[11px] font-bold tracking-[0.25em] uppercase text-teal-600 dark:text-teal-400 border border-teal-600/20 dark:border-teal-400/20 bg-teal-600/5 dark:bg-teal-400/5 px-4 py-1.5 rounded-full" style={{ fontFamily: 'Archivo, sans-serif' }}>
+            <span className="inline-block text-[11px] font-bold tracking-[0.25em] uppercase text-[#00cccc] dark:text-[#00cccc] border border-[#00cccc]/20 dark:border-[#00cccc]/20 bg-[#00cccc]/5 dark:bg-[#00cccc]/5 px-4 py-1.5 rounded-full" style={{ fontFamily: 'Poppins, sans-serif' }}>
               Professional Cleaning Services
             </span>
           </div>
-          <h1 className={`font-extrabold text-4xl sm:text-5xl md:text-7xl leading-[1.05] tracking-tight text-white dark:text-white mb-6 reveal transition-all duration-900 ease-out delay-100 ${visibleElements.has('hero-2') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-2" style={{ fontFamily: 'Archivo, sans-serif' }}>
+          <h1 className={`font-extrabold text-4xl sm:text-5xl md:text-7xl leading-[1.05] tracking-tight text-white dark:text-white mb-6 reveal transition-all duration-900 ease-out delay-100 ${visibleElements.has('hero-2') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
             Expert Cleaning.<br />
-            <span className="text-gray-200 dark:text-gray-400">Spotless Results Every Time.</span>
+            <span className="text-gray-200 dark:text-[#eef0f2]">Spotless Results Every Time.</span>
           </h1>
-          <p className={`text-gray-200 dark:text-gray-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light reveal transition-all duration-900 ease-out delay-200 ${visibleElements.has('hero-3') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-3">
+          <p className={`text-gray-200 dark:text-[#CFD2D4] text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light reveal transition-all duration-900 ease-out delay-200 ${visibleElements.has('hero-3') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-3">
             Professional cleaning for homes and businesses. Our trained specialists deliver thorough, reliable service that transforms your space into a pristine environment you'll love coming home to.
           </p>
           <div className={`reveal transition-all duration-900 ease-out delay-300 ${visibleElements.has('hero-4') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="hero-4">
-            <a href="#book" className="inline-block px-8 py-3.5 rounded-md text-sm uppercase tracking-wider font-bold transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,199,0.3)] hover:-translate-y-0.5 bg-teal-600 dark:bg-[#00e5c7] text-white dark:text-[#0c1017]" style={{
-              boxShadow: '0 0 20px rgba(0, 229, 199, 0.15), 0 0 60px rgba(0, 229, 199, 0.05)'
+            <a href="#book" className="inline-block px-8 py-3.5 rounded-md text-sm uppercase tracking-wider font-bold transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,204,204,0.3)] hover:-translate-y-0.5 bg-[#00cccc] dark:bg-[#00cccc] text-[#093457] dark:text-[#093457]" style={{
+              boxShadow: '0 0 20px rgba(0, 204, 204, 0.15), 0 0 60px rgba(0, 204, 204, 0.05)'
             }}>
               Book Your Cleaning
             </a>
           </div>
         </div>
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-          <span className="text-[10px] tracking-[0.2em] uppercase text-gray-400 dark:text-gray-500">Scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-gray-400 dark:from-gray-500 to-transparent"></div>
+          <span className="text-[10px] tracking-[0.2em] uppercase text-gray-400 dark:text-[#CFD2D4]">Scroll</span>
+          <div className="w-px h-8 bg-gradient-to-b from-gray-400 dark:from-[#CFD2D4] to-transparent"></div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="relative py-24 md:py-32">
+      <section id="services" className="relative py-24 md:py-32 bg-white dark:bg-[#093457]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-16 text-center reveal">
-            <div className="w-16 h-1 bg-gradient-to-r from-[#00e5c7] to-transparent mx-auto mb-5"></div>
-            <p className="text-sm font-semibold text-teal-400 mb-3 uppercase tracking-wider" style={{ fontFamily: 'Archivo, sans-serif' }}>Our Services</p>
-            <h2 className="font-extrabold text-3xl md:text-4xl text-white mb-4" style={{ fontFamily: 'Archivo, sans-serif' }}>Cleaning Packages for Every Need</h2>
-            <p className="text-gray-400 text-base max-w-2xl mx-auto leading-relaxed">Whether you need regular maintenance, a deep clean, or help with a move, we have the perfect solution for your home.</p>
+            <div className="w-16 h-1 bg-gradient-to-r from-[#00cccc] to-transparent mx-auto mb-5"></div>
+            <p className="text-sm font-semibold text-[#00cccc] dark:text-[#00cccc] mb-3 uppercase tracking-wider" style={{ fontFamily: 'Poppins, sans-serif' }}>Our Services</p>
+            <h2 className="font-extrabold text-3xl md:text-4xl text-[#093457] dark:text-white mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>Cleaning Packages for Every Need</h2>
+            <p className="text-gray-600 dark:text-[#CFD2D4] text-base max-w-2xl mx-auto leading-relaxed">Whether you need regular maintenance, a deep clean, or help with a move, we have the perfect solution for your home.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 id: 1,
@@ -162,20 +162,27 @@ export default function Home() {
                 image: 'https://picsum.photos/seed/closeddoor88/800/600',
                 description: 'Thorough cleaning for moving day. Every corner cleaned, every surface sanitized. Perfect for getting your security deposit back.',
                 tags: ['Full Detail', 'Documentation', 'Interior Windows', 'On Demand']
+              },
+              {
+                id: 4,
+                title: 'Overnight/Backshift',
+                image: 'https://picsum.photos/seed/nightcleaning/800/600',
+                description: 'Focused cleaning for backshift workers. Services scheduled while you sleep, available with 2-hour minimum at $60/hour.',
+                tags: ['Overnight', 'Backshift', 'Quiet Service', 'Flexible']
               }
             ].map((service, index) => (
-              <div key={service.id} className="rounded-xl overflow-hidden bg-[#171d27] border border-[#222830] transition-all duration-400 hover:border-[rgba(0,229,199,0.25)] hover:shadow-[0_0_40px_rgba(0,229,199,0.05)] reveal" style={{ transitionDelay: `${index * 0.1}s` }}>
+              <div key={service.id} className="rounded-xl overflow-hidden bg-gray-50 dark:bg-[#0a1420] border border-gray-200 dark:border-[#CFD2D4]/30 transition-all duration-400 hover:border-[rgba(0,204,204,0.25)] hover:shadow-[0_0_40px_rgba(0,204,204,0.05)] reveal" style={{ transitionDelay: `${index * 0.1}s` }}>
                 <div className="aspect-[4/3] overflow-hidden relative">
                   <img src={service.image} alt={service.title} className="service-img w-full h-full object-cover grayscale contrast-[1.15] transition-transform duration-700 ease-out hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#171d27] via-transparent to-transparent"></div>
-                  <span className="absolute bottom-4 left-5 text-[10px] font-bold tracking-[0.2em] uppercase text-teal-400" style={{ fontFamily: 'Archivo, sans-serif' }}>0{service.id}</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1420] via-transparent to-transparent"></div>
+                  <span className="absolute bottom-4 left-5 text-[10px] font-bold tracking-[0.2em] uppercase text-[#00cccc]" style={{ fontFamily: 'Poppins, sans-serif' }}>0{service.id}</span>
                 </div>
                 <div className="p-6">
-                  <h3 className="font-bold text-xl tracking-tight text-white mb-2" style={{ fontFamily: 'Archivo, sans-serif' }}>{service.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-5 font-light">{service.description}</p>
+                  <h3 className="font-bold text-xl tracking-tight text-[#093457] dark:text-white mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>{service.title}</h3>
+                  <p className="text-gray-600 dark:text-[#CFD2D4] text-sm leading-relaxed mb-5 font-light">{service.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {service.tags.map((tag) => (
-                      <span key={tag} className="bg-[rgba(0,229,199,0.06)] border border-[rgba(0,229,199,0.12)] text-teal-400 text-[11px] font-medium tracking-wider uppercase px-2.5 py-1 rounded">
+                      <span key={tag} className="bg-[rgba(0,204,204,0.06)] border border-[rgba(0,204,204,0.12)] text-[#00cccc] text-[11px] font-medium tracking-wider uppercase px-2.5 py-1 rounded">
                         {tag}
                       </span>
                     ))}
@@ -191,13 +198,13 @@ export default function Home() {
       <SpecialistSelector />
 
       {/* Transformations Section */}
-      <section id="transformations" className="relative py-24 md:py-32 border-t border-slate-700/30">
+      <section id="transformations" className="relative py-24 md:py-32 border-t border-[#CFD2D4]/30 bg-gray-50 dark:bg-[#093457]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="mb-16 text-center reveal">
-            <div className="w-16 h-1 bg-gradient-to-r from-[#00e5c7] to-transparent mx-auto mb-5"></div>
-            <p className="text-sm font-semibold text-teal-400 mb-3 uppercase tracking-wider" style={{ fontFamily: 'Archivo, sans-serif' }}>Before & After</p>
-            <h2 className="font-extrabold text-3xl md:text-4xl text-white mb-4" style={{ fontFamily: 'Archivo, sans-serif' }}>See the Difference We Make</h2>
-            <p className="text-gray-400 text-base max-w-2xl mx-auto leading-relaxed">Drag the slider to compare before and after. Real results from real homes like yours.</p>
+            <div className="w-16 h-1 bg-gradient-to-r from-[#00cccc] to-transparent mx-auto mb-5"></div>
+            <p className="text-sm font-semibold text-[#00cccc] dark:text-[#00cccc] mb-3 uppercase tracking-wider" style={{ fontFamily: 'Poppins, sans-serif' }}>Before & After</p>
+            <h2 className="font-extrabold text-3xl md:text-4xl text-[#093457] dark:text-white mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>See the Difference We Make</h2>
+            <p className="text-gray-600 dark:text-[#CFD2D4] text-base max-w-2xl mx-auto leading-relaxed">Drag the slider to compare before and after. Real results from real homes like yours.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -235,38 +242,38 @@ export default function Home() {
       <ContactForm />
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 dark:border-slate-700/30 pt-12 pb-8 mt-auto bg-white dark:bg-transparent">
+      <footer className="border-t border-gray-200 dark:border-[#CFD2D4]/30 pt-12 pb-8 mt-auto bg-white dark:bg-[#093457]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
               <span className="font-extrabold text-sm tracking-[0.15em] uppercase text-[#093457] dark:text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 TIDES <span className="text-[#00cccc]">&</span> TIDY
               </span>
-              <p className="text-gray-600 dark:text-gray-400 text-xs mt-1">Precision cleaning. Absolute peace of mind.</p>
+              <p className="text-gray-600 dark:text-[#CFD2D4] text-xs mt-1">Precision cleaning. Absolute peace of mind.</p>
             </div>
-            <div className="flex items-center gap-6 text-xs text-gray-500 dark:text-gray-500">
-              <a href="tel:+18005551234" className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors flex items-center gap-1.5">
+            <div className="flex items-center gap-6 text-xs text-gray-500 dark:text-gray-400">
+              <a href="tel:+18005551234" className="hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors flex items-center gap-1.5">
                 <Phone className="w-3.5 h-3.5" />
                 (800) 555-1234
               </a>
-              <a href="mailto:hello@tidesandtidy.com" className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors flex items-center gap-1.5">
+              <a href="mailto:hello@tidesandtidy.com" className="hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors flex items-center gap-1.5">
                 <Mail className="w-3.5 h-3.5" />
                 hello@tidesandtidy.com
               </a>
             </div>
             <div className="flex items-center gap-4">
-              <a href="#" className="text-gray-600 dark:text-gray-600 hover:text-gray-900 dark:hover:text-gray-300 transition-colors" aria-label="Instagram">
+              <a href="#" className="text-gray-400 dark:text-gray-400 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors" aria-label="Instagram">
                 <Instagram className="w-4.5 h-4.5" />
               </a>
-              <a href="#" className="text-gray-600 dark:text-gray-600 hover:text-gray-900 dark:hover:text-gray-300 transition-colors" aria-label="LinkedIn">
+              <a href="#" className="text-gray-400 dark:text-gray-400 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors" aria-label="LinkedIn">
                 <Linkedin className="w-4.5 h-4.5" />
               </a>
-              <a href="#" className="text-gray-600 dark:text-gray-600 hover:text-gray-900 dark:hover:text-gray-300 transition-colors" aria-label="Twitter">
+              <a href="#" className="text-gray-400 dark:text-gray-400 hover:text-[#00cccc] dark:hover:text-[#00cccc] transition-colors" aria-label="Twitter">
                 <Twitter className="w-4.5 h-4.5" />
               </a>
             </div>
           </div>
-          <div className="mt-8 pt-6 border-t border-gray-200 dark:border-slate-700/20 text-center">
+          <div className="mt-8 pt-6 border-t border-gray-200 dark:border-[#CFD2D4]/20 text-center">
             <p className="text-gray-700 dark:text-gray-500 text-[11px] tracking-wide">&copy; 2025 Tides & Tidy. All rights reserved.</p>
           </div>
           
@@ -276,12 +283,12 @@ export default function Home() {
             
             <div className="relative flex items-center justify-center gap-4 py-6">
               {/* Wave animation - left side */}
-              <div className="flex items-center gap-1" style={{ animation: 'wave 1.5s ease-in-out infinite' }}>
-                <span className="w-2 h-5 bg-[#00cccc]/50 rounded-full" style={{ animationDelay: '0s' }}></span>
-                <span className="w-2 h-7 bg-[#00cccc]/70 rounded-full" style={{ animationDelay: '0.1s' }}></span>
-                <span className="w-2 h-5 bg-[#00cccc]/60 rounded-full" style={{ animationDelay: '0.2s' }}></span>
-                <span className="w-2 h-8 bg-[#00cccc]/80 rounded-full" style={{ animationDelay: '0.3s' }}></span>
-                <span className="w-2 h-6 bg-[#00cccc]/70 rounded-full" style={{ animationDelay: '0.4s' }}></span>
+              <div className="flex items-center gap-1">
+                <span className="w-2 h-5 bg-[#00cccc]/50 rounded-full animate-wave" style={{ animationDelay: '0s' }}></span>
+                <span className="w-2 h-7 bg-[#00cccc]/70 rounded-full animate-wave" style={{ animationDelay: '0.1s' }}></span>
+                <span className="w-2 h-5 bg-[#00cccc]/60 rounded-full animate-wave" style={{ animationDelay: '0.2s' }}></span>
+                <span className="w-2 h-8 bg-[#00cccc]/80 rounded-full animate-wave" style={{ animationDelay: '0.3s' }}></span>
+                <span className="w-2 h-6 bg-[#00cccc]/70 rounded-full animate-wave" style={{ animationDelay: '0.4s' }}></span>
               </div>
               
               <span className="text-[#093457] dark:text-[#eef0f2] text-lg md:text-xl font-semibold tracking-wide flex items-center gap-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
@@ -289,12 +296,12 @@ export default function Home() {
               </span>
               
               {/* Wave animation - right side */}
-              <div className="flex items-center gap-1" style={{ animation: 'wave 1.5s ease-in-out infinite reverse' }}>
-                <span className="w-2 h-7 bg-[#00cccc]/40 rounded-full" style={{ animationDelay: '0s' }}></span>
-                <span className="w-2 h-5 bg-[#00cccc]/50 rounded-full" style={{ animationDelay: '0.1s' }}></span>
-                <span className="w-2 h-8 bg-[#00cccc]/60 rounded-full" style={{ animationDelay: '0.2s' }}></span>
-                <span className="w-2 h-6 bg-[#00cccc]/50 rounded-full" style={{ animationDelay: '0.3s' }}></span>
-                <span className="w-2 h-7 bg-[#00cccc]/40 rounded-full" style={{ animationDelay: '0.4s' }}></span>
+              <div className="flex items-center gap-1">
+                <span className="w-2 h-7 bg-[#00cccc]/40 rounded-full animate-wave" style={{ animationDelay: '0s' }}></span>
+                <span className="w-2 h-5 bg-[#00cccc]/50 rounded-full animate-wave" style={{ animationDelay: '0.1s' }}></span>
+                <span className="w-2 h-8 bg-[#00cccc]/60 rounded-full animate-wave" style={{ animationDelay: '0.2s' }}></span>
+                <span className="w-2 h-6 bg-[#00cccc]/50 rounded-full animate-wave" style={{ animationDelay: '0.3s' }}></span>
+                <span className="w-2 h-7 bg-[#00cccc]/40 rounded-full animate-wave" style={{ animationDelay: '0.4s' }}></span>
               </div>
             </div>
           </div>
@@ -372,16 +379,16 @@ function BeforeAfterSlider({ beforeImage, afterImage, clientName, serviceTier, q
           className="absolute top-0 bottom-0 z-10 pointer-events-none"
           style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
         >
-          <div className="w-0.5 h-full mx-auto bg-[#00e5c7] shadow-[0_0_8px_rgba(0,229,199,0.5)]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 bg-[rgba(0,229,199,0.9)] backdrop-blur-sm rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(0,229,199,0.3)]">
-            <ChevronLeft className="w-4 h-4 text-[#0c1017]" />
-            <ChevronRight className="w-4 h-4 text-[#0c1017]" />
+          <div className="w-0.5 h-full mx-auto bg-[#00cccc] shadow-[0_0_8px_rgba(0,204,204,0.5)]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 bg-[rgba(0,204,204,0.9)] backdrop-blur-sm rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(0,204,204,0.3)]">
+            <ChevronLeft className="w-4 h-4 text-[#093457]" />
+            <ChevronRight className="w-4 h-4 text-[#093457]" />
           </div>
         </div>
-        <span className="absolute top-4 left-4 z-20 text-[10px] font-bold tracking-[0.2em] uppercase bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded text-gray-300" style={{ fontFamily: 'Archivo, sans-serif' }}>
+        <span className="absolute top-4 left-4 z-20 text-[10px] font-bold tracking-[0.2em] uppercase bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded text-gray-300" style={{ fontFamily: 'Poppins, sans-serif' }}>
           Before
         </span>
-        <span className="absolute top-4 right-4 z-20 text-[10px] font-bold tracking-[0.2em] uppercase bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded text-teal-400" style={{ fontFamily: 'Archivo, sans-serif' }}>
+        <span className="absolute top-4 right-4 z-20 text-[10px] font-bold tracking-[0.2em] uppercase bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded text-[#00cccc]" style={{ fontFamily: 'Poppins, sans-serif' }}>
           After
         </span>
         <div
@@ -391,10 +398,10 @@ function BeforeAfterSlider({ beforeImage, afterImage, clientName, serviceTier, q
         />
       </div>
       <div className="mt-5 pl-1">
-        <p className="text-gray-300 text-sm leading-relaxed italic font-light">
+        <p className="text-gray-700 dark:text-[#eef0f2] text-sm leading-relaxed italic font-light">
           "{quote}"
         </p>
-        <p className="text-gray-500 text-xs mt-2 font-medium tracking-wide">— {clientName}, {serviceTier}</p>
+        <p className="text-gray-500 dark:text-gray-400 text-xs mt-2 font-medium tracking-wide">— {clientName}, {serviceTier}</p>
       </div>
     </div>
   )

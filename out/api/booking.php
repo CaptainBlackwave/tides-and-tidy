@@ -52,11 +52,8 @@ Client Information:
 
 Service Details:
 - Service Type: $service
-- Rooms: $rooms
-- Bedrooms: $bedrooms
-- Bathrooms: $bathrooms
-
-Consultation Preference: $consultationType
+- Estimated Hours: $rooms
+- Consultation Preference: $consultationType
 
 Additional Notes:
 $notes
