@@ -86,20 +86,20 @@ export default function SpecialistSelector() {
 
   return (
     <>
-      <section id="specialists" className="relative py-24 md:py-32 border-t border-slate-700/30">
+      <section id="specialists" className="relative py-24 md:py-32 border-t border-[#CFD2D4]/30 bg-[#F8F9FA] dark:bg-[#093457]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           {/* Section Header */}
           <div className="mb-16 text-center">
-            <div className="w-16 h-1 bg-gradient-to-r from-[#c4a868] to-transparent mx-auto mb-5"></div>
-            <p className="text-sm font-semibold text-[#c4a868] mb-3 uppercase tracking-wider">
+            <div className="w-16 h-1 bg-gradient-to-r from-[#00cccc] to-transparent mx-auto mb-5"></div>
+            <p className="text-sm font-semibold text-[#00cccc] mb-3 uppercase tracking-wider" style={{ fontFamily: 'Poppins, sans-serif' }}>
               Meet Our Team
             </p>
-            <h2 className="font-extrabold text-3xl md:text-4xl text-white mb-4" style={{ fontFamily: 'Archivo, sans-serif' }}>
+            <h2 className="font-extrabold text-3xl md:text-4xl text-[#093457] dark:text-white mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
               Dedicated Cleaning Specialists
             </h2>
-            <p className="text-gray-400 text-base max-w-2xl mx-auto leading-relaxed">
+            <p className="text-[#093457]/70 dark:text-[#CFD2D4] text-base max-w-2xl mx-auto leading-relaxed">
               Every member of our team is carefully vetted, background-checked, and professionally trained.
-              <span className="text-teal-400 font-medium"> Click any specialist to learn more about their experience and read client reviews.</span>
+              <span className="text-[#00cccc] font-medium"> Click any specialist to learn more about their experience and read client reviews.</span>
             </p>
           </div>
 
@@ -109,17 +109,17 @@ export default function SpecialistSelector() {
               <div
                 key={specialist.id}
                 onClick={() => openDrawer(specialist)}
-                className="rounded-xl overflow-hidden bg-[#171d27] border border-[#222830] cursor-pointer transition-all duration-400 hover:border-[rgba(0,229,199,0.25)] hover:shadow-[0_0_40px_rgba(0,229,199,0.05)] hover:-translate-y-1 group"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="rounded-xl overflow-hidden bg-[#FFFFFF] dark:bg-[#0A1630] border border-[#CFD2D4] dark:border-[#CFD2D4]/30 cursor-pointer transition-all duration-400 hover:border-[rgba(0,204,204,0.5)] hover:shadow-[0_0_40px_rgba(0,204,204,0.1)] hover:-translate-y-1 group"
+                style={{ transitionDelay: `${index * 0.1}s` }}
               >
                 <div className="aspect-[4/5] overflow-hidden relative">
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(12,16,23,0.6)_100%)] pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(9,52,87,0.6)_100%)] pointer-events-none dark:opacity-100"></div>
                   <img
                     src={specialist.image}
                     alt={specialist.name}
                     className="w-full h-full object-cover grayscale contrast-[1.15] transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute bottom-4 right-4 bg-teal-400 text-slate-950 px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                  <div className="absolute bottom-4 right-4 bg-[#00cccc] text-[#093457] px-4 py-2 rounded-lg text-xs font-bold flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
                     Learn More
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -128,27 +128,27 @@ export default function SpecialistSelector() {
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-bold text-lg text-white group-hover:text-teal-400 transition-colors" style={{ fontFamily: 'Archivo, sans-serif' }}>
+                    <h3 className="font-bold text-lg text-[#093457] dark:text-white group-hover:text-[#00cccc] transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>
                       {specialist.name}
                     </h3>
-                    <span className="text-xs text-gray-400 font-medium bg-slate-800 px-2 py-1 rounded">
+                    <span className="text-xs text-[#093457]/50 dark:text-[#CFD2D4] font-medium bg-[#E9ECEF] dark:bg-[#093457] px-2 py-1 rounded">
                       {specialist.experience} Experience
                     </span>
                   </div>
-                  <p className="text-[#c4a868] text-xs font-semibold uppercase tracking-wider mb-4">
+                  <p className="text-[#00cccc] text-xs font-semibold uppercase tracking-wider mb-4">
                     {specialist.role}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {specialist.certifications.slice(0, 2).map((cert) => (
                       <span
                         key={cert}
-                        className="text-xs text-gray-400 bg-slate-800/50 px-2 py-1 rounded"
+                        className="text-xs text-[#093457]/70 dark:text-[#CFD2D4] bg-[#E9ECEF] dark:bg-[#093457]/50 px-2 py-1 rounded"
                       >
                         {cert}
                       </span>
                     ))}
                   </div>
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-[#093457]/70 dark:text-[#CFD2D4] text-sm leading-relaxed">
                     "{specialist.philosophy.slice(0, 90)}..."
                   </p>
                 </div>
@@ -160,7 +160,7 @@ export default function SpecialistSelector() {
 
       {/* Drawer Overlay */}
       <div
-        className={`fixed inset-0 bg-black/70 backdrop-blur-sm z-[1100] transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[1100] transition-opacity duration-300 ${
           isDrawerOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         onClick={closeDrawer}
@@ -168,7 +168,7 @@ export default function SpecialistSelector() {
 
       {/* Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-full md:w-[480px] bg-[#131820] z-[1200] border-l border-slate-700/50 shadow-2xl transition-transform duration-300 ease-out ${
+        className={`fixed top-0 right-0 h-full w-full md:w-[480px] bg-[#FFFFFF] dark:bg-[#093457] z-[1200] border-l border-[#CFD2D4] dark:border-[#CFD2D4]/30 shadow-2xl transition-transform duration-300 ease-out ${
           isDrawerOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -181,7 +181,7 @@ export default function SpecialistSelector() {
                 alt={selectedSpecialist.name}
                 className="w-full h-full object-cover grayscale contrast-[1.15]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#131820] to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#093457] dark:from-[#093457] to-transparent"></div>
               <button
                 onClick={closeDrawer}
                 className="absolute top-4 right-4 w-10 h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-black/70 transition-colors"
@@ -193,25 +193,25 @@ export default function SpecialistSelector() {
 
             {/* Content */}
             <div className="flex-1 overflow-y-auto p-6 custom-scrollbar">
-              <h2 className="font-heading font-800 text-2xl text-white mb-1">
+              <h2 className="font-heading font-800 text-2xl text-[#093457] dark:text-white mb-1" style={{ fontFamily: 'Poppins, sans-serif' }}>
                 {selectedSpecialist.name}
               </h2>
-              <p className="text-[#c4a868] text-sm font-medium tracking-wider uppercase mb-2">
+              <p className="text-[#00cccc] text-sm font-medium tracking-wider uppercase mb-2">
                 {selectedSpecialist.role}
               </p>
-              <p className="text-gray-500 text-sm mb-6">{selectedSpecialist.experience}</p>
+              <p className="text-[#093457]/50 dark:text-[#CFD2D4] text-sm mb-6">{selectedSpecialist.experience}</p>
 
               {/* Next Available */}
-              <div className="bg-gradient-to-r from-teal-400/10 to-transparent border border-teal-400/20 rounded-lg p-4 mb-6">
+              <div className="bg-gradient-to-r from-[#00cccc]/10 to-transparent border border-[#00cccc]/20 rounded-lg p-4 mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-teal-400/20 rounded-full flex items-center justify-center">
-                    <Calendar className="w-6 h-6 text-teal-400" />
+                  <div className="w-12 h-12 bg-[#00cccc]/20 rounded-full flex items-center justify-center">
+                    <Calendar className="w-6 h-6 text-[#00cccc]" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400 font-medium">
+                    <p className="text-sm text-[#093457]/70 dark:text-[#CFD2D4] font-medium">
                       Next Available Appointment
                     </p>
-                    <p className="text-lg text-white font-semibold" style={{ fontFamily: 'Archivo, sans-serif' }}>
+                    <p className="text-lg text-[#093457] dark:text-white font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>
                       {selectedSpecialist.nextAvailable}
                     </p>
                   </div>
@@ -220,15 +220,15 @@ export default function SpecialistSelector() {
 
               {/* Certifications */}
               <div className="mb-6">
-                <h3 className="text-sm text-gray-400 font-medium mb-3 flex items-center gap-2">
-                  <Award className="w-4 h-4 text-[#c4a868]" />
+                <h3 className="text-sm text-[#093457]/70 dark:text-[#CFD2D4] font-medium mb-3 flex items-center gap-2">
+                  <Award className="w-4 h-4 text-[#00cccc]" />
                   Certifications & Training
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {selectedSpecialist.certifications.map((cert) => (
                     <span
                       key={cert}
-                      className="bg-[rgba(0,229,199,0.06)] border border-[rgba(0,229,199,0.12)] text-teal-400 text-xs px-3 py-1.5 rounded font-medium"
+                      className="bg-[rgba(0,204,204,0.06)] border border-[rgba(0,204,204,0.12)] text-[#00cccc] text-xs px-3 py-1.5 rounded font-medium"
                     >
                       {cert}
                     </span>
@@ -237,29 +237,29 @@ export default function SpecialistSelector() {
               </div>
 
               {/* About */}
-              <div className="mb-6 pl-4 border-l-2 border-[#c4a868]">
-                <h3 className="text-sm text-gray-400 font-medium mb-2">My Approach</h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
+              <div className="mb-6 pl-4 border-l-2 border-[#00cccc]">
+                <h3 className="text-sm text-[#093457]/70 dark:text-[#CFD2D4] font-medium mb-2">My Approach</h3>
+                <p className="text-[#093457] dark:text-white text-sm leading-relaxed">
                   "{selectedSpecialist.philosophy}"
                 </p>
               </div>
 
               {/* Reviews */}
               <div>
-                <h3 className="text-sm text-gray-400 font-medium mb-4 flex items-center gap-2">
-                  <Star className="w-4 h-4 fill-[#c4a868] text-[#c4a868]" />
+                <h3 className="text-sm text-[#093457]/70 dark:text-[#CFD2D4] font-medium mb-4 flex items-center gap-2">
+                  <Star className="w-4 h-4 fill-[#00cccc] text-[#00cccc]" />
                   Client Reviews ({selectedSpecialist.reviews.length})
                 </h3>
                 <div className="space-y-4">
                   {selectedSpecialist.reviews.map((review) => (
                     <div
                       key={review.id}
-                      className="bg-slate-900/30 border border-slate-800 rounded-lg p-4"
+                      className="bg-[#F8F9FA] dark:bg-[#0A1630]/50 border border-[#CFD2D4] dark:border-[#CFD2D4]/30 rounded-lg p-4"
                     >
                       <div className="flex items-start justify-between mb-2">
                         <div>
-                          <p className="text-white text-sm font-medium">{review.client}</p>
-                          <p className="text-gray-500 text-xs">{review.date}</p>
+                          <p className="text-[#093457] dark:text-white text-sm font-medium">{review.client}</p>
+                          <p className="text-[#093457]/50 dark:text-[#CFD2D4] text-xs">{review.date}</p>
                         </div>
                         <div className="flex gap-0.5">
                           {[...Array(5)].map((_, i) => (
@@ -267,14 +267,14 @@ export default function SpecialistSelector() {
                               key={i}
                               className={`w-3 h-3 ${
                                 i < review.rating
-                                  ? 'fill-[#c4a868] text-[#c4a868]'
-                                  : 'text-gray-700'
+                                  ? 'fill-[#00cccc] text-[#00cccc]'
+                                  : 'text-[#CFD2D4]/30'
                               }`}
                             />
                           ))}
                         </div>
                       </div>
-                      <p className="text-gray-400 text-sm leading-relaxed">{review.text}</p>
+                      <p className="text-[#093457]/70 dark:text-[#CFD2D4] text-sm leading-relaxed">{review.text}</p>
                     </div>
                   ))}
                 </div>
@@ -282,7 +282,7 @@ export default function SpecialistSelector() {
             </div>
 
             {/* Footer CTA */}
-            <div className="flex-shrink-0 p-6 border-t border-slate-800 bg-slate-900/50">
+            <div className="flex-shrink-0 p-6 border-t border-[#CFD2D4] dark:border-[#CFD2D4]/30 bg-[#F8F9FA] dark:bg-[#0A1630]/50">
               <button
                 onClick={() => {
                   closeDrawer()
@@ -290,11 +290,9 @@ export default function SpecialistSelector() {
                     document.getElementById('book')?.scrollIntoView({ behavior: 'smooth' })
                   }, 300)
                 }}
-                className="w-full py-4 rounded-xl text-sm font-bold uppercase tracking-wide transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,199,0.3)] hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                className="w-full py-4 rounded-xl text-sm font-bold uppercase tracking-wide transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,204,204,0.3)] hover:-translate-y-0.5 flex items-center justify-center gap-2 bg-[#00cccc] text-[#093457]"
                 style={{
-                  background: '#00e5c7',
-                  color: '#0c1017',
-                  boxShadow: '0 0 20px rgba(0, 229, 199, 0.15), 0 0 60px rgba(0, 229, 199, 0.05)'
+                  boxShadow: '0 0 20px rgba(0, 204, 204, 0.15), 0 0 60px rgba(0, 204, 204, 0.05)'
                 }}
               >
                 Book with {selectedSpecialist.name}
@@ -312,14 +310,17 @@ export default function SpecialistSelector() {
           width: 6px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-          background: #131820;
+          background: #F8F9FA;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-track {
+          background: #093457;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #252d3a;
+          background: #CFD2D4;
           border-radius: 3px;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #2e3748;
+          background: #00cccc;
         }
       `}</style>
     </>
